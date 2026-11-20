@@ -18,7 +18,6 @@ export function Footer({ locale, dict }: { locale: Locale; dict: Dictionary }) {
             <Logo />
           </Link>
           <p className="mt-4 max-w-xs leading-relaxed text-fg-muted">{dict.footer.tagline}</p>
-          <p className="mt-3 font-chalk text-xl text-accent">{company.slogan[locale]}</p>
         </div>
 
         <nav aria-label={dict.a11y.footerNav}>
