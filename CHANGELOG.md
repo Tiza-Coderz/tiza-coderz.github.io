@@ -33,6 +33,7 @@ Primera versión pública de la web corporativa de Tiza Coderz.
 - PWA instalable con service worker.
 - CI (lint, tipos, formato, tests, build) y despliegue automático a GitHub Pages; configuración para Vercel.
 
-[Sin publicar]: https://github.com/Tiza-Coderz/tiza-coderz.github.io/compare/v1.1.0...develop
+[Sin publicar]: https://github.com/Tiza-Coderz/tiza-coderz.github.io/compare/v1.2.0...develop
+[1.2.0]: https://github.com/Tiza-Coderz/tiza-coderz.github.io/compare/v1.1.0...v1.2.0
 [1.1.0]: https://github.com/Tiza-Coderz/tiza-coderz.github.io/compare/v1.0.0...v1.1.0
 [1.0.0]: https://github.com/Tiza-Coderz/tiza-coderz.github.io/releases/tag/v1.0.0
