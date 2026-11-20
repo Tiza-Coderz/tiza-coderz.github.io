@@ -6,6 +6,10 @@ Todos los cambios relevantes de este proyecto. Formato basado en
 
 ## [Sin publicar]
 
+## [1.0.0] - 2026-11-20
+
+Primera versión pública de la web corporativa de Tiza Coderz.
+
 ### Añadido
 
 - Portada con propuesta de valor, cifras, servicios y casos destacados, proceso, preguntas frecuentes y llamada a la acción.
@@ -18,4 +22,5 @@ Todos los cambios relevantes de este proyecto. Formato basado en
 - PWA instalable con service worker.
 - CI (lint, tipos, formato, tests, build) y despliegue automático a GitHub Pages; configuración para Vercel.
 
-[Sin publicar]: https://github.com/Tiza-Coderz/tiza-coderz.github.io/commits/develop
+[Sin publicar]: https://github.com/Tiza-Coderz/tiza-coderz.github.io/compare/v1.0.0...develop
+[1.0.0]: https://github.com/Tiza-Coderz/tiza-coderz.github.io/releases/tag/v1.0.0
