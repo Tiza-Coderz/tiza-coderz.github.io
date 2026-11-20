@@ -15,7 +15,6 @@ import { readFile, mkdir } from "node:fs/promises";
 import path from "node:path";
 import { chromium, type Browser } from "playwright-core";
 import sharp from "sharp";
-import { company } from "../data/company";
 import { getAllProjects, type Project } from "../src/lib/projects";
 
 const ROOT = process.cwd();
@@ -35,7 +34,7 @@ async function dataUri(file: string): Promise<string> {
 
 const publicFile = (src: string) => path.join(PUBLIC, src);
 
-const logoMark = `<svg viewBox="0 0 64 64" width="44" height="44"><rect width="64" height="64" rx="14" fill="#0f4c75"/><rect x="4" y="4" width="56" height="56" rx="11" fill="none" stroke="#f8f6f0" stroke-opacity=".25" stroke-width="2"/><g fill="none" stroke="#f8f6f0" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 21 12 32l10 11"/><path d="M42 21l10 11-10 11"/><path d="M36 17 28 47"/></g><path d="M15 53c8-2.2 25-2.6 34-.6" fill="none" stroke="#f5c84c" stroke-width="3.5" stroke-linecap="round"/></svg>`;
+const logoMark = `<svg viewBox="0 0 64 64" width="44" height="44"><rect width="64" height="64" rx="14" fill="#0f4c75"/><rect x="4" y="4" width="56" height="56" rx="11" fill="none" stroke="#f8f6f0" stroke-opacity=".25" stroke-width="2"/><g fill="none" stroke="#f8f6f0" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 21 12 32l10 11"/><path d="M42 21l10 11-10 11"/><path d="M36 17 28 47"/></g></svg>`;
 
 const baseCss = `
   *{box-sizing:border-box;margin:0;padding:0}
@@ -44,11 +43,9 @@ const baseCss = `
       radial-gradient(circle at 15% 15%, rgba(255,255,255,.10), transparent 40%),
       radial-gradient(circle at 90% 90%, rgba(245,200,76,.12), transparent 42%),
       linear-gradient(155deg,#0f4c75 0%,#0a2f49 70%,#061d2e 100%);}
-  body::before{content:"";position:absolute;inset:0;opacity:.07;
-    background-image:radial-gradient(#fff 1px,transparent 1.2px);background-size:22px 22px}
   .brand{position:absolute;left:56px;top:48px;display:flex;align-items:center;gap:12px;font-weight:800;font-size:22px;letter-spacing:-.01em}
   .brand b{color:#7db4d8}
-  .chalk{font-family:Caveat,cursive;color:#f5c84c}
+  .kicker{font-size:15px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#afd2ea}
   .chip{display:inline-block;border:1.5px solid rgba(248,246,240,.35);border-radius:999px;padding:6px 14px;font-size:17px;font-weight:600;color:rgba(248,246,240,.9);margin:0 8px 8px 0}
   .phone{position:absolute;border-radius:38px;background:#0b1622;padding:9px;box-shadow:0 30px 60px rgba(0,0,0,.45),0 0 0 1.5px rgba(255,255,255,.12) inset}
   .phone img{display:block;width:100%;height:100%;object-fit:cover;object-position:top;border-radius:30px}
@@ -58,7 +55,7 @@ const baseCss = `
   .laptop .base{height:16px;margin:0 -40px;background:linear-gradient(#c9d3dc,#8c99a5);border-radius:0 0 18px 18px}
 `;
 
-const fontsLink = `<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Inter:wght@500;600;700;800&display=block" rel="stylesheet">`;
+const fontsLink = `<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700;800&display=block" rel="stylesheet">`;
 
 function page(width: number, height: number, body: string, extraCss = "") {
   return `<!doctype html><html><head><meta charset="utf-8">${fontsLink}<style>${baseCss}body{width:${width}px;height:${height}px;position:relative}${extraCss}</style></head><body>${body}</body></html>`;
@@ -186,9 +183,9 @@ async function projectImages(browser: Browser, project: Project) {
     const body = `
       <div class="brand">${logoMark}<span>Tiza <b>Coderz</b></span></div>
       <div style="position:absolute;left:56px;top:${190 * s}px;width:${textWidth}px">
-        <div class="chalk" style="font-size:${34 * s}px">${project.platforms.map((p) => ({ web: "Web", android: "Android", ios: "iOS", pwa: "PWA", telegram: "Telegram" })[p]).join(" · ")}</div>
+        <div class="kicker" style="font-size:${15 * s}px">${project.platforms.map((p) => ({ web: "Web", android: "Android", ios: "iOS", pwa: "PWA", telegram: "Telegram" })[p]).join(" · ")}</div>
         <h1 style="font-size:${(project.title.length > 16 ? 58 : 76) * s}px;line-height:1.02;font-weight:800;letter-spacing:-.03em;margin-top:${10 * s}px">${project.title}</h1>
-        <div style="width:120px;height:6px;border-radius:6px;background:#f5c84c;margin:${24 * s}px 0 ${26 * s}px;transform:rotate(-1.5deg)"></div>
+        <div style="height:${26 * s}px"></div>
         <div>${project.stack
           .slice(0, 4)
           .map((t) => `<span class="chip" style="font-size:${17 * s}px">${t}</span>`)
@@ -213,14 +210,14 @@ async function projectImages(browser: Browser, project: Project) {
 
 const siteCopy = {
   es: {
-    kicker: "Estudio de diseño y desarrollo · La Habana",
+    kicker: "Diseño y desarrollo · La Habana",
     title: "Diseño, apps, webs y sistemas para mipymes cubanas",
-    sub: "Diseño y desarrollo · Funciona aunque la conexión sea mala",
+    sub: "Software a la medida · Funciona aunque la conexión sea mala",
   },
   en: {
-    kicker: "Design & software studio · Havana, Cuba",
+    kicker: "Design & development · Havana, Cuba",
     title: "Design, apps, websites and systems for Cuban small businesses",
-    sub: "Design and development · Built for slow connections",
+    sub: "Custom software · Built for slow connections",
   },
 } as const;
 
@@ -237,11 +234,10 @@ async function siteImages(browser: Browser) {
     const body = `
       <div class="brand">${logoMark}<span>Tiza <b>Coderz</b></span></div>
       <div style="position:absolute;left:56px;top:150px;width:560px">
-        <div class="chalk" style="font-size:30px">${t.kicker}</div>
+        <div class="kicker">${t.kicker}</div>
         <h1 style="font-size:54px;line-height:1.05;font-weight:800;letter-spacing:-.03em;margin-top:10px">${t.title}</h1>
-        <div style="width:120px;height:6px;border-radius:6px;background:#f5c84c;margin:22px 0;transform:rotate(-1.5deg)"></div>
+        <div style="height:22px"></div>
         <p style="font-size:21px;color:rgba(248,246,240,.82);font-weight:500">${t.sub}</p>
-        <p class="chalk" style="font-size:32px;margin-top:26px">${company.slogan[locale]}</p>
       </div>
       ${phones
         .map(
