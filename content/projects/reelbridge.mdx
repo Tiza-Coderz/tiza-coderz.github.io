@@ -1,0 +1,42 @@
+---
+title: ReelBridge
+client: "Creadores de contenido y negocios con redes (herramienta propia)"
+kind: producto
+sector: automatizacion
+summary: Automatización que lleva los Reels de Instagram a YouTube Shorts y deja listo el video para TikTok, todo manejado desde un bot de Telegram.
+problem: Publicar el mismo video en tres redes es trabajo manual repetido cada día, y desde Cuba muchas herramientas y APIs oficiales no están disponibles.
+solution: Un bot de Telegram al que se le comparte el Reel; lo descarga, lo muestra con su título para aprobarlo y, con un toque, lo publica en YouTube Shorts y entrega el video limpio y el texto para TikTok.
+result: Lo que eran varios minutos por video en tres apps se convierte en compartir un enlace y pulsar «Publicar», sin conocimientos técnicos.
+stack: [n8n, Telegram Bot API, YouTube Data API, yt-dlp, PostgreSQL, Docker]
+platforms: [telegram]
+year: 2026
+cover: /images/projects/reelbridge/cover.webp
+screenshots: []
+highlights:
+  - { value: "1 toque", label: "Aprobar y publicar desde Telegram" }
+  - { value: "3 redes", label: "Instagram → YouTube Shorts y TikTok" }
+  - { value: "Por invitación", label: "El administrador aprueba a cada usuario desde el bot" }
+featured: false
+order: 13
+---
+
+## El problema
+
+Un negocio o creador que publica en Instagram quiere estar también en **YouTube Shorts** y **TikTok**, pero hacerlo a mano significa descargar, renombrar, subir y copiar el texto tres veces por cada video. Además, desde Cuba no se puede usar la plataforma de desarrolladores de Meta.
+
+## La solución
+
+**ReelBridge** es un servicio de automatización construido con **n8n**:
+
+1. El usuario comparte el Reel con el **bot de Telegram**.
+2. El bot lo descarga y se lo muestra con el título propuesto.
+3. Con **✅ Publicar**, sube el video a **YouTube Shorts** en el canal del usuario.
+4. Le devuelve el **video limpio y el texto** listos para subirlos a TikTok en un minuto.
+
+El acceso es por invitación: cada usuario pide acceso con `/start` y el administrador lo aprueba desde el mismo Telegram.
+
+## El resultado
+
+Una tarea repetitiva que se hace **desde el teléfono y en segundos**, pensada para personas sin conocimientos técnicos. Es un buen ejemplo de lo que ofrecemos en **Automatización con IA**: unir las herramientas que el negocio ya usa para que trabajen solas.
+
+> Herramienta interna: el código no es público.

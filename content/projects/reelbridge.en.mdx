@@ -1,0 +1,42 @@
+---
+title: ReelBridge
+client: "Content creators and social-media businesses (in-house tool)"
+kind: producto
+sector: automatizacion
+summary: Automation that takes Instagram Reels to YouTube Shorts and prepares the video for TikTok, all driven from a Telegram bot.
+problem: Posting the same video on three networks is repetitive manual work every day, and from Cuba many tools and official APIs are unavailable.
+solution: A Telegram bot you share the Reel with; it downloads it, shows it with its title for approval and, with one tap, publishes it to YouTube Shorts and returns the clean video and caption for TikTok.
+result: What used to take several minutes per video across three apps becomes sharing a link and tapping "Publish", with no technical knowledge.
+stack: [n8n, Telegram Bot API, YouTube Data API, yt-dlp, PostgreSQL, Docker]
+platforms: [telegram]
+year: 2026
+cover: /images/projects/reelbridge/cover.webp
+screenshots: []
+highlights:
+  - { value: "1 tap", label: "Approve and publish from Telegram" }
+  - { value: "3 networks", label: "Instagram → YouTube Shorts and TikTok" }
+  - { value: "Invite-only", label: "The admin approves every user from the bot" }
+featured: false
+order: 13
+---
+
+## The problem
+
+A business or creator posting on Instagram also wants to be on **YouTube Shorts** and **TikTok**, but doing it by hand means downloading, renaming, uploading and copying the caption three times per video. And from Cuba, Meta's developer platform is not available.
+
+## The solution
+
+**ReelBridge** is an automation service built with **n8n**:
+
+1. The user shares the Reel with the **Telegram bot**.
+2. The bot downloads it and shows it with the suggested title.
+3. With **✅ Publish**, it uploads the video to **YouTube Shorts** on the user's channel.
+4. It returns the **clean video and caption**, ready to post on TikTok in a minute.
+
+Access is invite-only: each user requests access with `/start` and the admin approves it from Telegram.
+
+## The result
+
+A repetitive task done **from the phone in seconds**, designed for people with no technical background. It's a good example of what we offer in **AI automation**: connecting the tools a business already uses so they work on their own.
+
+> In-house tool: the code is not public.
