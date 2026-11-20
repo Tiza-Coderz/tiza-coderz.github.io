@@ -88,10 +88,9 @@ export const es = {
     },
     process: {
       eyebrow: "Cómo trabajamos",
-      title: "De la idea en la pizarra al sistema funcionando",
+      title: "De la idea al sistema funcionando",
       intro:
         "Un proceso claro en 5 pasos, para que sepa en todo momento qué se está haciendo y cuánto falta.",
-      duration: "Duración",
       deliverable: "Usted recibe",
       seeMore: "Ver el proceso completo",
     },
@@ -255,11 +254,6 @@ export const es = {
     title: "Un estudio de La Habana que entiende cómo funciona su negocio",
     intro:
       "Tiza Coderz nació para resolver los problemas reales de las mipymes cubanas: dos monedas, una tasa que cambia cada semana, apagones, datos caros y clientes que escriben por WhatsApp. No vendemos tecnología: vendemos que su negocio funcione mejor.",
-    nameStory: {
-      title: "¿Por qué «Tiza»?",
-      text: "Porque así empieza cada proyecto: usted nos explica su idea como si la dibujara en una pizarra, y nosotros la convertimos en software que funciona. Del boceto en tiza al sistema que vende.",
-      spelling: "Se escribe Tiza Coderz, con zeta al final.",
-    },
     mission: {
       title: "Nuestra misión",
       text: "Que cualquier mipyme cubana pueda tener el mismo software que una empresa grande, a un precio que tenga sentido para su negocio y hecho por gente que conoce su realidad.",
