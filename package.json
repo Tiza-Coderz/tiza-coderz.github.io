@@ -14,7 +14,10 @@
     "test:watch": "vitest",
     "test:coverage": "vitest run --coverage",
     "check": "pnpm lint && pnpm typecheck && pnpm format:check && pnpm test",
-    "shots": "tsx scripts/preview-shots.ts"
+    "shots": "tsx scripts/preview-shots.ts",
+    "img": "tsx scripts/optimize-image.ts",
+    "capture": "tsx scripts/capture-demo.ts",
+    "marketing": "tsx scripts/generate-marketing.ts"
   },
   "dependencies": {
     "@mdx-js/mdx": "^3.1.1",
