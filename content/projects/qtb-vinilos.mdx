@@ -1,0 +1,40 @@
+---
+title: QTB · Tienda de vinilos
+client: "QTB, tienda de discos y vinilos"
+kind: cliente
+sector: ecommerce
+summary: "E-commerce completo para una tienda de discos: backend, tienda web y una app para los mensajeros que reparten los pedidos."
+problem: La tienda vendía por redes y mensajes, sin catálogo con stock real, sin control de pedidos y coordinando las entregas a mano con cada mensajero.
+solution: Una API con catálogo, carrito, pedidos, stock y roles; una tienda web orientada a la venta; y una app Flutter para que los mensajeros reciban entregas, cambien el estado y dejen evidencia.
+result: "Las tres capas del producto, de punta a punta, en un solo sistema: el cliente compra en la web, la tienda gestiona en el panel y el mensajero entrega desde su app."
+stack: [FastAPI, Python, MongoDB, React, TypeScript, Vite, Flutter, Docker]
+platforms: [web, android]
+year: 2026
+cover: /images/projects/qtb-vinilos/cover.webp
+screenshots: []
+highlights:
+  - { value: "3 aplicaciones", label: "API, tienda web y app de mensajeros conectadas" }
+  - { value: "Stock real", label: "El catálogo muestra solo lo que hay en existencia" }
+  - { value: "OTP", label: "Verificación por código para compras y accesos" }
+featured: false
+order: 11
+---
+
+## El problema
+
+Una tienda de discos y vinilos con clientela fiel, pero que vendía **por redes sociales y mensajes**: sin un catálogo con existencias reales, sin historial de pedidos y coordinando cada entrega con los mensajeros por teléfono.
+
+## La solución
+
+Construimos **las tres partes del producto**:
+
+- **Backend (API REST)**: catálogo con búsqueda y filtros, carrito, pedidos, control de stock, autenticación con roles, verificación por código (OTP) y panel administrativo.
+- **Tienda web** rápida y orientada a la conversión: fichas de producto, carrito y checkout.
+- **App de mensajeros** (Flutter): asignación de entregas, cambio de estado del pedido, evidencia de entrega y notificaciones.
+- Todo empaquetado con **Docker** para levantarlo igual en desarrollo y en producción.
+
+## El resultado
+
+Un sistema único donde **la venta, la gestión y la entrega hablan entre sí**: el pedido que entra por la web aparece en el panel, se asigna a un mensajero y se cierra con su evidencia de entrega. Es el proyecto donde mejor se ve que podemos hacernos cargo de un producto completo.
+
+> Proyecto de cliente: no se publica una demo en línea.

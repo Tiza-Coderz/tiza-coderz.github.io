@@ -1,0 +1,7 @@
+.next
+out
+coverage
+pnpm-lock.yaml
+public
+*.mdx
+AGENTS.md

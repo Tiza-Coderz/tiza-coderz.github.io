@@ -1,0 +1,55 @@
+---
+title: NegocioClaro
+client: "Del Valle Distributors, Boyeros (sample business)"
+kind: producto
+sector: finanzas
+summary: Multi-currency financial dashboard for Cuban small businesses. Income and expenses in USD, CUP, EUR and MLC consolidated at each day's rate.
+problem: Payments in and out in four currencies with a rate that changes daily. With notebooks or Excel it's almost impossible to know the real profit this month.
+solution: An installable web app that records every transaction in its currency, consolidates it at that day's rate and shows profit, expenses, receivables and payroll on one screen.
+result: The owner answers "how much did I make this month?" in seconds, knows who owes what and hands the accountant a monthly report in PDF or CSV.
+stack: [React 19, Vite, TypeScript, Tailwind CSS, TanStack Query, Supabase, PWA]
+platforms: [web, pwa]
+year: 2026
+demoUrl: https://negocioclaro-three.vercel.app
+repoUrl: https://github.com/Tiza-Coderz/negocioclaro
+demoCredentials: { user: "admin@demo.cu", password: "demo1234" }
+cover: /images/projects/negocioclaro/cover.webp
+screenshots:
+  - { src: /images/projects/negocioclaro/dashboard-movil.webp, alt: "Dashboard with this month's profit on mobile", device: mobile }
+  - { src: /images/projects/negocioclaro/registro-rapido-movil.webp, alt: "Quick entry of a sale in three fields", device: mobile }
+  - { src: /images/projects/negocioclaro/cuentas-movil.webp, alt: "Receivables with a WhatsApp reminder", device: mobile }
+  - { src: /images/projects/negocioclaro/dashboard-escritorio.webp, alt: "Financial dashboard on desktop", device: desktop }
+  - { src: /images/projects/negocioclaro/tasas-escritorio.webp, alt: "Exchange rate history by date", device: desktop }
+highlights:
+  - { value: "4 currencies", label: "USD, CUP, EUR and MLC at each day's rate" }
+  - { value: "5 seconds", label: "to record a sale with quick entry" }
+  - { value: "143 tests", label: "automated, covering money and rate calculations" }
+featured: true
+order: 3
+---
+
+## The problem
+
+A Cuban small-business owner gets paid and pays in **four currencies** (CUP cash, USD via Zelle, EUR via TropiPay, MLC via transfer), with an exchange rate that changes every day. With notebooks or Excel it's almost impossible to answer the basics:
+
+- How much did I **really make** this month, in USD and in CUP?
+- Where is my money going?
+- Who owes me and which invoices are overdue?
+- What do I give my accountant at month end?
+
+## The solution
+
+**NegocioClaro** answers those questions on one screen, from a phone, even on a poor connection:
+
+- **Dashboard** with this month's net profit compared with last month, income, expenses, margin and cash flow. Totals in **USD or CUP** with one tap.
+- **Rates by date**: every transaction is consolidated at its own day's rate. Fixing a rate recalculates the affected transactions.
+- **Quick entry** with 3 fields to record a sale in 5 seconds; without signal, it's saved when the connection returns.
+- **Receivables and payables** with due dates, partial payments and a **Remind via WhatsApp** button with the message already written.
+- **Payroll** in CUP or USD with bonuses and deductions.
+- **Monthly PDF report** and an **accountant-ready CSV** that opens correctly in Spanish Excel.
+
+## The result
+
+A tool that turns the mess of four currencies into **one clear number**: the real profit of the month. It's a PWA that installs on the home screen, loads about 175 KB at start and defers charts and PDF until they're needed.
+
+> Sign in with **admin@demo.cu / demo1234**. The demo includes 6 months of transactions from a food distributor and resets itself every night.

@@ -1,0 +1,55 @@
+---
+title: ComboYa
+client: "Tienda de combos en La Habana (negocio de ejemplo)"
+kind: producto
+sector: ecommerce
+summary: Tienda online para vender combos de comida, aseo y bebidas a cubanos en el exterior, con entrega a sus familias en La Habana.
+problem: Pedidos por WhatsApp con listas de precios en imágenes, cotizaciones repetidas todo el día, direcciones mal anotadas y clientes preguntando «¿ya llegó?».
+solution: Un catálogo en línea con precios en USD, EUR y CUP, envío calculado por municipio, checkout en dos pasos y un código de seguimiento para cada pedido, más un panel de administración completo.
+result: El negocio sigue trabajando por WhatsApp, pero con mensajes ya redactados, datos completos de comprador y destinatario y todos los pedidos ordenados en un panel.
+stack: [Next.js 15, TypeScript, Tailwind CSS, Supabase, Zod, Vercel]
+platforms: [web, pwa]
+year: 2026
+demoUrl: https://combo-ya.vercel.app
+repoUrl: https://github.com/Tiza-Coderz/ComboYa
+demoCredentials: { user: "admin@demo.cu", password: "demo1234" }
+cover: /images/projects/comboya/cover.webp
+screenshots:
+  - { src: /images/projects/comboya/movil-inicio.webp, alt: "Inicio de la tienda en el móvil con combos destacados", device: mobile }
+  - { src: /images/projects/comboya/movil-ficha-combo.webp, alt: "Ficha de un combo con el ahorro frente a comprar por separado", device: mobile }
+  - { src: /images/projects/comboya/movil-checkout.webp, alt: "Checkout con datos del destinatario y municipio", device: mobile }
+  - { src: /images/projects/comboya/escritorio-inicio.webp, alt: "Inicio de la tienda en escritorio", device: desktop }
+  - { src: /images/projects/comboya/admin-dashboard.webp, alt: "Panel con ventas, pedidos pendientes y productos más vendidos", device: desktop }
+  - { src: /images/projects/comboya/escritorio-seguimiento.webp, alt: "Seguimiento público del pedido con línea de tiempo", device: desktop }
+highlights:
+  - { value: "~145 kB", label: "de JavaScript inicial: carga rápido con datos móviles" }
+  - { value: "USD · EUR · CUP", label: "Precios con la tasa del día editada desde el panel" }
+  - { value: "CY-1234", label: "Código de seguimiento para cada pedido" }
+featured: true
+order: 2
+---
+
+## El problema
+
+Miles de cubanos en Miami, Madrid o Ciudad de México compran comida para su familia en Cuba. Hoy lo hacen por WhatsApp, con listas de precios en imágenes, sin saber cuánto cuesta el envío ni en qué estado está su pedido. Para la mipyme eso significa:
+
+- Horas respondiendo mensajes para cotizar el mismo combo una y otra vez.
+- Errores en direcciones, teléfonos y cobros, porque los datos llegan sueltos por chat.
+- Clientes ansiosos que escriben «¿ya llegó?» porque no tienen dónde ver el estado.
+
+## La solución
+
+**ComboYa** pone el catálogo en línea y ordena todo el proceso:
+
+- **Catálogo** con búsqueda en español («frijol» encuentra «Frijoles negros»), filtros y fichas que muestran **cuánto se ahorra** con cada combo.
+- **Precios en USD** con selector USD/EUR y el equivalente en **CUP** según la tasa del día.
+- **Checkout en 2 pasos**: datos del comprador y del destinatario en Cuba, con **envío calculado por municipio**.
+- Al confirmar, se abre **WhatsApp del negocio con el resumen** y el cliente recibe un enlace de **seguimiento** (`/seguimiento/CY-1234`).
+- **Panel de administración**: pedidos con cambio de estado, cobros, hoja de entrega imprimible, productos y combos, zonas de entrega, tasas y reportes.
+- **PWA instalable** con página sin conexión e imágenes comprimidas a WebP en el navegador (una foto de 4 MB queda en unos 60 KB).
+
+## El resultado
+
+Una tienda que **trabaja mientras el dueño duerme**: el cliente del exterior ve precios claros, sabe cuánto paga de envío y sigue su pedido sin escribir. El negocio recibe pedidos completos, con dirección y teléfono correctos, y ve en un panel cuánto vendió, cuánto le deben y qué combos funcionan mejor.
+
+> Entre al panel en `/admin/login` con **admin@demo.cu / demo1234**. El botón «Restablecer demo» vuelve a los datos de ejemplo.

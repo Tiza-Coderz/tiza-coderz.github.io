@@ -1,0 +1,58 @@
+---
+title: TallerTrack
+client: "TecnoFix phone repair, Cerro (sample business)"
+kind: producto
+sector: servicios
+summary: Service orders for repair shops. Intake with ticket and QR, public status tracking, WhatsApp notifications, parts inventory and warranty.
+problem: Orders written in a notebook, customers calling all day to ask if their phone is ready, parts that "disappear" and disputed warranties.
+solution: A lightweight web system that records every device with its physical condition and photos, prints a ticket with a QR code so customers can check the status, and deducts used parts from inventory.
+result: Fewer calls, a record of how each device arrived, parts under control and reports of profit per part and per technician, in USD and CUP.
+stack: [Next.js 16, TypeScript, Tailwind CSS, Supabase, Zod, Vercel]
+platforms: [web, pwa]
+year: 2026
+demoUrl: https://tallertrack-five.vercel.app
+repoUrl: https://github.com/Tiza-Coderz/tallertrack
+demoCredentials: { user: "admin@demo.cu", password: "demo1234" }
+cover: /images/projects/tallertrack/cover.webp
+screenshots:
+  - { src: /images/projects/tallertrack/estado-publico.webp, alt: "Public repair status tracking on mobile", device: mobile }
+  - { src: /images/projects/tallertrack/login.webp, alt: "Sign-in screen with the demo credentials", device: mobile }
+  - { src: /images/projects/tallertrack/tablero.webp, alt: "Order board by status", device: desktop }
+  - { src: /images/projects/tallertrack/detalle-orden.webp, alt: "Order detail with history and WhatsApp notification", device: desktop }
+  - { src: /images/projects/tallertrack/reportes.webp, alt: "Revenue and technician performance reports", device: desktop }
+highlights:
+  - { value: "80 mm ticket + QR", label: "Customers check the status without calling" }
+  - { value: "9 statuses", label: "From \"Received\" to \"Delivered\", with internal and customer notes" }
+  - { value: "IMEI warranty", label: "Reopen an order without charging labor" }
+featured: true
+order: 4
+---
+
+## The problem
+
+In a typical Havana repair shop, orders are written in a notebook or a WhatsApp group. That causes problems that cost money and customers:
+
+- **"Is my phone ready?"**: the owner answers the same question all day.
+- **Complaints** about scratches or accessories because nobody recorded how the device came in.
+- **Parts that disappear**: nobody knows how many screens are left or which device they went into.
+- **Disputed warranties**: no quick way to know when and who repaired an IMEI.
+- **Confusing prices** when the USD rate changes every week.
+
+## The solution
+
+**TallerTrack** is a web app that runs on the technician's phone on slow data and installs like an app:
+
+- **Device intake**: customer, IMEI, fault, physical condition, accessories, photos, password or pattern (encrypted), quote in USD with its CUP equivalent and promised date.
+- **PDF ticket** in 80 mm (thermal printer) or A4, with a **QR code to the tracking page**.
+- **Status workflow** from "Received" to "Delivered", with history, internal notes and customer-visible notes.
+- **WhatsApp notification** with the message pre-written for each status and the total in USD and CUP.
+- **Public tracking** without login and without sensitive data.
+- **Parts inventory** with automatic deduction when used, low-stock alerts and movement history.
+- **Warranty** with IMEI search and order reopening.
+- **Reports** on orders, monthly revenue, profit per part and technician performance.
+
+## The result
+
+The shop **stops living on the phone**: customers scan the QR on their ticket and see how the repair is going. Every device is documented from the moment it arrives, every part knows where it was used and the owner sees what makes money. The key rules (status changes, stock, warranty) are enforced in the database, so they don't depend on someone remembering.
+
+> Sign in with **admin@demo.cu / demo1234**. The demo includes 4 technicians, 50 orders and 30 real parts, and can be reset from the login screen.

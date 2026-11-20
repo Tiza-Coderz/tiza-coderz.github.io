@@ -1,26 +1,241 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+/* Modo oscuro por clase (.dark en <html>), que pone el script anti-parpadeo del layout. */
+@custom-variant dark (&:where(.dark, .dark *));
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+/* ───────────────────────── Tokens de marca ─────────────────────────
+   Pizarra (#0f4c75) · blanco tiza · amarillo tiza                     */
+@theme {
+  --color-brand-50: #eef6fb;
+  --color-brand-100: #d6e9f5;
+  --color-brand-200: #afd2ea;
+  --color-brand-300: #7db4d8;
+  --color-brand-400: #4a91c0;
+  --color-brand-500: #2872a5;
+  --color-brand-600: #175d8d;
+  --color-brand-700: #0f4c75;
+  --color-brand-800: #0c3c5d;
+  --color-brand-900: #0a2f49;
+  --color-brand-950: #061d2e;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  --color-chalk: #f8f6f0;
+  --color-chalk-yellow: #f5c84c;
+  --color-chalk-yellow-strong: #e0ad1f;
+  --color-whatsapp: #1fa855;
+  --color-whatsapp-strong: #168a45;
+
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, "Segoe UI", sans-serif;
+  --font-chalk: var(--font-caveat), "Comic Sans MS", cursive;
+
+  --radius-card: 1.25rem;
+
+  --animate-fade-up: fade-up 0.6s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+
+  @keyframes fade-up {
+    from {
+      opacity: 0;
+      transform: translateY(14px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* Colores semánticos: cambian con el tema, los componentes solo usan estos. */
+:root {
+  --bg: #ffffff;
+  --bg-soft: #f4f7fa;
+  --surface: #ffffff;
+  --fg: #0e1a26;
+  --fg-muted: #4b5b6b;
+  --border: #dde5ec;
+  --ring: #2872a5;
+  --accent-text: #0f4c75;
+  color-scheme: light;
+}
+
+.dark {
+  --bg: #08131d;
+  --bg-soft: #0c1a27;
+  --surface: #102231;
+  --fg: #e8eef3;
+  --fg-muted: #9fb0bf;
+  --border: #1d3345;
+  --ring: #7db4d8;
+  --accent-text: #7db4d8;
+  color-scheme: dark;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-bg-soft: var(--bg-soft);
+  --color-surface: var(--surface);
+  --color-fg: var(--fg);
+  --color-fg-muted: var(--fg-muted);
+  --color-line: var(--border);
+  --color-ring: var(--ring);
+  --color-accent: var(--accent-text);
+}
+
+/* ───────────────────────── Base ───────────────────────── */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background: var(--bg);
+    color: var(--fg);
+    font-family: var(--font-sans);
+    text-rendering: optimizeLegibility;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--ring);
+    outline-offset: 3px;
+    border-radius: 6px;
+  }
+
+  ::selection {
+    background: var(--color-chalk-yellow);
+    color: var(--color-brand-950);
+  }
+
+  [id] {
+    scroll-margin-top: 5.5rem;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+/* ───────────────────────── Utilidades propias ───────────────────────── */
+
+/* Fondo de pizarra: degradado + grano de tiza muy suave (sin imágenes). */
+@utility bg-chalkboard {
+  background-color: var(--color-brand-800);
+  background-image:
+    radial-gradient(circle at 18% 12%, rgb(255 255 255 / 0.09), transparent 42%),
+    radial-gradient(circle at 85% 80%, rgb(245 200 76 / 0.08), transparent 40%),
+    linear-gradient(160deg, var(--color-brand-700), var(--color-brand-900) 70%);
+}
+
+/* Subrayado a mano con tiza amarilla. */
+@utility chalk-underline {
+  background-image: linear-gradient(
+    transparent 62%,
+    rgb(245 200 76 / 0.85) 62%,
+    rgb(245 200 76 / 0.85) 88%,
+    transparent 88%
+  );
+  background-repeat: no-repeat;
+  padding-inline: 0.1em;
+}
+
+/* Aparición al hacer scroll sin JavaScript (scroll-driven animations).
+   Los navegadores que no lo soportan muestran el contenido directamente. */
+@utility reveal {
+  @media (prefers-reduced-motion: no-preference) {
+    @supports (animation-timeline: view()) {
+      animation: fade-up linear both;
+      animation-timeline: view();
+      animation-range: entry 0% cover 22%;
+    }
+  }
+}
+
+/* Texto largo de los casos de estudio (MDX). */
+@utility prose-tz {
+  color: var(--fg);
+  font-size: 1.0625rem;
+  line-height: 1.75;
+
+  & > * + * {
+    margin-top: 1.1em;
+  }
+  & h2 {
+    margin-top: 2.2em;
+    font-size: 1.6rem;
+    line-height: 1.25;
+    font-weight: 700;
+    letter-spacing: -0.015em;
+  }
+  & h2::before {
+    content: "";
+    display: block;
+    width: 3rem;
+    height: 0.3rem;
+    margin-bottom: 0.9rem;
+    border-radius: 999px;
+    background: var(--color-chalk-yellow);
+    transform: rotate(-2deg);
+  }
+  & h2:first-child {
+    margin-top: 0;
+  }
+  & h3 {
+    margin-top: 1.8em;
+    font-size: 1.2rem;
+    font-weight: 700;
+  }
+  & p,
+  & li {
+    color: var(--fg-muted);
+  }
+  & strong {
+    color: var(--fg);
+    font-weight: 650;
+  }
+  & a {
+    color: var(--accent-text);
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+  & ul,
+  & ol {
+    padding-left: 1.25rem;
+  }
+  & ul {
+    list-style: disc;
+  }
+  & ol {
+    list-style: decimal;
+  }
+  & li + li {
+    margin-top: 0.45em;
+  }
+  & li::marker {
+    color: var(--color-brand-400);
+  }
+  & code {
+    font-size: 0.9em;
+    padding: 0.15em 0.4em;
+    border-radius: 0.375rem;
+    background: var(--bg-soft);
+    border: 1px solid var(--border);
+  }
+  & blockquote {
+    margin-top: 2em;
+    padding: 1rem 1.25rem;
+    border-left: 4px solid var(--color-chalk-yellow);
+    border-radius: 0 0.75rem 0.75rem 0;
+    background: var(--bg-soft);
+  }
+  & blockquote p {
+    color: var(--fg);
+  }
 }
