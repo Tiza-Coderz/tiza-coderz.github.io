@@ -33,16 +33,12 @@ export function Header({ locale, dict }: { locale: Locale; dict: Dictionary }) {
             short={dict.language.switchToShort}
           />
           <ThemeToggle label={dict.theme.toggle} />
-          <ButtonExternal
-            href={wa}
-            variant="whatsapp"
-            size="sm"
-            className="ml-2 hidden sm:inline-flex"
-            srHint={dict.a11y.externalLink}
-          >
-            <IconWhatsApp className="size-4" />
-            {dict.nav.cta}
-          </ButtonExternal>
+          <span className="ml-2 hidden md:block">
+            <ButtonExternal href={wa} variant="whatsapp" size="sm" srHint={dict.a11y.externalLink}>
+              <IconWhatsApp className="size-4" />
+              {dict.nav.cta}
+            </ButtonExternal>
+          </span>
           <MobileNav
             items={items}
             label={dict.a11y.mainNav}

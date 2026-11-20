@@ -43,7 +43,7 @@ export function Logo({ className = "" }: { className?: string }) {
   return (
     <span className={`inline-flex items-center gap-2.5 ${className}`}>
       <LogoMark />
-      <span className="text-lg leading-none font-extrabold tracking-tight">
+      <span className="text-lg leading-none font-extrabold tracking-tight whitespace-nowrap">
         Tiza <span className="text-accent">Coderz</span>
       </span>
     </span>
