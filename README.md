@@ -180,12 +180,39 @@ Ver [`.env.example`](.env.example). Todas son públicas (no hay secretos):
 4. Cada push a `main` ejecuta [`deploy.yml`](.github/workflows/deploy.yml): tests → build → publicación. Tarda unos 2 minutos.
 5. Dominio propio: añada el dominio en **Settings → Pages → Custom domain**, cree el registro `CNAME` en su DNS y ponga `SITE_URL=https://sudominio.com`.
 
-### Opción B · Vercel (plan Hobby)
+### Opción B · Vercel (plan Hobby, gratis)
 
-1. En [vercel.com/new](https://vercel.com/new) importe el repositorio.
-2. Vercel detecta Next.js y usa [`vercel.json`](vercel.json) (`pnpm build`, salida `out/`, redirección `/` → `/es/`).
-3. En **Environment Variables** añada `NEXT_PUBLIC_SITE_URL=https://<su-proyecto>.vercel.app` y, si quiere, `NEXT_PUBLIC_FORMSPREE_ID`.
-4. Cada push a `main` despliega a producción y cada PR obtiene una URL de vista previa.
+El repo ya está preparado: [`vercel.json`](vercel.json) fija la instalación con pnpm, el build, la redirección de `/` según el idioma del navegador (`/en/` o `/es/`), cabeceras de seguridad y de caché. La URL pública se detecta sola (`VERCEL_PROJECT_PRODUCTION_URL`), y las vistas previas de cada PR salen con `noindex` y un `robots.txt` que bloquea a los buscadores.
+
+**Desde la web (recomendado):**
+
+1. Entre en [vercel.com/new](https://vercel.com/new) con su cuenta de GitHub y elija **Import** en `Tiza-Coderz/tiza-coderz.github.io`. Si la organización no aparece, pulse **Adjust GitHub App Permissions** y dé acceso al repo.
+2. Deje los valores que Vercel detecta: **Framework: Next.js**, **Root Directory: `./`**. No cambie los comandos (vienen de `vercel.json`).
+3. En **Settings → General → Node.js Version** compruebe que sea **22.x**.
+4. En **Settings → Git → Production Branch** ponga **`main`** (por defecto Vercel usaría la rama por defecto del repo, que es `develop`).
+5. (Opcional) **Settings → Environment Variables**:
+
+   | Variable                   | Valor                                                       | Entornos            |
+   | -------------------------- | ----------------------------------------------------------- | ------------------- |
+   | `NEXT_PUBLIC_FORMSPREE_ID` | ID de su formulario de Formspree                            | Production, Preview |
+   | `NEXT_PUBLIC_SITE_URL`     | Solo si usa dominio propio, p. ej. `https://tizacoderz.com` | Production          |
+
+6. **Deploy**. En unos 2 minutos el sitio queda en `https://<proyecto>.vercel.app`.
+
+A partir de ahí: cada push a `main` despliega a producción y cada PR a `develop` recibe su URL de vista previa, que Vercel comenta en el PR.
+
+**Desde la terminal (alternativa):**
+
+```bash
+pnpm dlx vercel login          # abre el navegador para iniciar sesión
+pnpm dlx vercel link           # enlaza la carpeta con un proyecto nuevo o existente
+pnpm dlx vercel                # despliegue de vista previa
+pnpm dlx vercel --prod         # despliegue a producción
+```
+
+**Dominio propio:** **Settings → Domains → Add** (p. ej. `tizacoderz.com`), cree en su DNS el registro que indique Vercel y ponga `NEXT_PUBLIC_SITE_URL=https://tizacoderz.com`.
+
+> **¿GitHub Pages y Vercel a la vez?** Es posible, pero elija **uno como sitio oficial** para no duplicar contenido en Google. Si el oficial es Vercel, ponga la variable de repositorio `SITE_URL=https://<proyecto>.vercel.app` en GitHub (Settings → Variables): así las páginas de GitHub Pages apuntarán su `canonical` a Vercel. O desactive Pages en **Settings → Pages**.
 
 ### Formulario con Formspree (gratis hasta 50 envíos/mes)
 

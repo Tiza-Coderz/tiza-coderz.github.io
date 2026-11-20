@@ -6,6 +6,17 @@ Todos los cambios relevantes de este proyecto. Formato basado en
 
 ## [Sin publicar]
 
+## [1.1.0] - 2026-11-20
+
+### Añadido
+
+- Despliegue en Vercel listo: URL pública detectada con `VERCEL_PROJECT_PRODUCTION_URL`, redirección de `/` según el idioma del navegador, cabeceras de seguridad y guía paso a paso en el README.
+- Las vistas previas de Vercel salen con `noindex` y `robots.txt` bloqueado.
+
+### Cambiado
+
+- Node 22.x fijado en `engines`.
+
 ## [1.0.0] - 2026-11-20
 
 Primera versión pública de la web corporativa de Tiza Coderz.
@@ -22,5 +33,6 @@ Primera versión pública de la web corporativa de Tiza Coderz.
 - PWA instalable con service worker.
 - CI (lint, tipos, formato, tests, build) y despliegue automático a GitHub Pages; configuración para Vercel.
 
-[Sin publicar]: https://github.com/Tiza-Coderz/tiza-coderz.github.io/compare/v1.0.0...develop
+[Sin publicar]: https://github.com/Tiza-Coderz/tiza-coderz.github.io/compare/v1.1.0...develop
+[1.1.0]: https://github.com/Tiza-Coderz/tiza-coderz.github.io/compare/v1.0.0...v1.1.0
 [1.0.0]: https://github.com/Tiza-Coderz/tiza-coderz.github.io/releases/tag/v1.0.0
