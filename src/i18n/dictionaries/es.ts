@@ -282,22 +282,12 @@ export const es = {
     team: {
       title: "El equipo",
       intro:
-        "Un núcleo técnico con experiencia en productos en producción y una red de colaboradores de diseño y desarrollo que sumamos según el tamaño de cada proyecto.",
-      founderBio:
-        "Ingeniero Informático graduado de la CUJAE (2026). Más de 3 años construyendo productos digitales en producción: apps móviles con Flutter, sistemas web con React y Next.js, APIs con NestJS y FastAPI, e integración de inteligencia artificial en productos reales. Ha trabajado en equipos remotos para clientes de Cuba, Venezuela y España.",
-      skills: [
-        "Flutter",
-        "React / Next.js",
-        "Node.js / NestJS",
-        "FastAPI",
-        "PostgreSQL / Supabase",
-        "IA aplicada",
-      ],
+        "Un equipo pequeño que une desarrollo y diseño: quien escribe el código y quien diseña su marca y sus pantallas trabajan juntos desde el primer día.",
       cv: "Ver currículum (PDF)",
       github: "GitHub",
       collaborators: "Colaboradores",
       collaboratorsText:
-        "Diseño gráfico, UX y desarrollo adicional cuando el proyecto lo necesita, siempre bajo la misma dirección técnica y el mismo estándar de calidad.",
+        "Cuando un proyecto lo necesita, sumamos desarrolladores y especialistas de confianza, siempre bajo la misma dirección y el mismo estándar de calidad.",
     },
   },
   contact: {

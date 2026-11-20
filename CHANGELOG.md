@@ -6,6 +6,18 @@ Todos los cambios relevantes de este proyecto. Formato basado en
 
 ## [Sin publicar]
 
+## [1.4.0] - 2026-11-20
+
+### Añadido
+
+- Kamila Aiguesvives se suma al equipo en «Nosotros» como diseñadora gráfica y de marca, con su CV en PDF accesible desde su tarjeta.
+- El equipo se define en `data/team.ts` y se publica como `employee` en el JSON-LD.
+- Formulario de contacto conectado a Formspree mediante `.env.production`.
+
+### Cambiado
+
+- Las tarjetas del equipo tienen la misma altura y los colaboradores pasan a una tarjeta propia debajo.
+
 ## [1.3.1] - 2026-11-20
 
 ### Corregido
@@ -66,7 +78,8 @@ Primera versión pública de la web corporativa de Tiza Coderz.
 - PWA instalable con service worker.
 - CI (lint, tipos, formato, tests, build) y despliegue automático a GitHub Pages; configuración para Vercel.
 
-[Sin publicar]: https://github.com/Tiza-Coderz/tiza-coderz.github.io/compare/v1.3.1...develop
+[Sin publicar]: https://github.com/Tiza-Coderz/tiza-coderz.github.io/compare/v1.4.0...develop
+[1.4.0]: https://github.com/Tiza-Coderz/tiza-coderz.github.io/compare/v1.3.1...v1.4.0
 [1.3.1]: https://github.com/Tiza-Coderz/tiza-coderz.github.io/compare/v1.3.0...v1.3.1
 [1.3.0]: https://github.com/Tiza-Coderz/tiza-coderz.github.io/compare/v1.2.0...v1.3.0
 [1.2.0]: https://github.com/Tiza-Coderz/tiza-coderz.github.io/compare/v1.1.0...v1.2.0

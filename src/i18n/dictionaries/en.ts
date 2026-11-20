@@ -275,22 +275,12 @@ export const en: Dictionary = {
     team: {
       title: "The team",
       intro:
-        "A technical core with experience shipping products to production, plus a network of design and development collaborators we bring in depending on the size of each project.",
-      founderBio:
-        "Computer Engineer from CUJAE (2026). Over 3 years building digital products in production: Flutter mobile apps, web systems with React and Next.js, APIs with NestJS and FastAPI, and AI integration in real products. Has worked in remote teams for clients in Cuba, Venezuela and Spain.",
-      skills: [
-        "Flutter",
-        "React / Next.js",
-        "Node.js / NestJS",
-        "FastAPI",
-        "PostgreSQL / Supabase",
-        "Applied AI",
-      ],
+        "A small team that brings development and design together: the people who write the code and the people who design your brand and screens work side by side from day one.",
       cv: "View résumé (PDF)",
       github: "GitHub",
       collaborators: "Collaborators",
       collaboratorsText:
-        "Graphic design, UX and extra development when the project needs it, always under the same technical lead and the same quality standard.",
+        "When a project needs it, we bring in trusted developers and specialists, always under the same lead and the same quality standard.",
     },
   },
   contact: {
