@@ -41,6 +41,95 @@ export const es = {
     defaultMessage:
       "Hola, Tiza Coderz. Vi su web y me gustaría hablar sobre un proyecto para mi negocio.",
   },
+  home: {
+    hero: {
+      eyebrow: "Hecho en Cuba, para Cuba",
+      titleStart: "Apps y sistemas a la medida para que su mipyme",
+      titleHighlight: "venda más",
+      subtitle:
+        "Controle su inventario y su caja, deje de perder pedidos y cobre en USD y en CUP. Todo lo que hacemos funciona aunque la conexión sea mala.",
+      ctaWhatsapp: "Escríbanos por WhatsApp",
+      ctaProjects: "Ver proyectos",
+      trust: [
+        "Precios en USD y CUP",
+        "Funciona con datos lentos o sin conexión",
+        "Demos cada semana",
+      ],
+      visualAlt:
+        "Tres apps hechas por Tiza Coderz en el móvil: punto de venta, tienda online y dashboard financiero",
+    },
+    stats: [
+      { value: "+3 años", label: "construyendo productos digitales en producción" },
+      { value: "+10", label: "proyectos entregados a clientes" },
+      { value: "3 países", label: "clientes en Cuba, Venezuela y España" },
+      { value: "4 demos", label: "públicas que puede probar hoy" },
+    ],
+    why: {
+      eyebrow: "Por qué Tiza Coderz",
+      title: "Software pensado para cómo trabaja un negocio en Cuba",
+      items: [
+        {
+          title: "Dos monedas, una tasa que cambia",
+          text: "Precios base en USD, equivalente en CUP con la tasa del día y cierres de caja por moneda. Sin recalcular a mano.",
+        },
+        {
+          title: "Sin conexión, sin problema",
+          text: "Apps que siguen vendiendo durante el apagón o sin datos, y sincronizan cuando vuelve la señal.",
+        },
+        {
+          title: "WhatsApp en el centro",
+          text: "Pedidos, avisos y recordatorios que llegan a WhatsApp ya redactados, porque ahí están sus clientes.",
+        },
+        {
+          title: "Usted ve el avance cada semana",
+          text: "Demos semanales desde su teléfono, precio cerrado por escrito y pagos por etapas.",
+        },
+      ],
+    },
+    process: {
+      eyebrow: "Cómo trabajamos",
+      title: "De la idea en la pizarra al sistema funcionando",
+      intro:
+        "Un proceso claro en 5 pasos, para que sepa en todo momento qué se está haciendo y cuánto falta.",
+      duration: "Duración",
+      deliverable: "Usted recibe",
+      seeMore: "Ver el proceso completo",
+    },
+    testimonials: {
+      eyebrow: "Lo que dicen nuestros clientes",
+      title: "Negocios que ya trabajan con nosotros",
+    },
+    faq: {
+      eyebrow: "Preguntas frecuentes",
+      title: "Lo que nos preguntan antes de empezar",
+      items: [
+        {
+          q: "¿Cuánto cuesta una app o una web?",
+          a: "Depende de lo que necesite, pero cada paquete tiene un precio de partida: una web de presencia desde 150 USD, una tienda online desde 500 USD y un sistema de gestión desde 900 USD. En la primera conversación le damos un precio cerrado por escrito.",
+        },
+        {
+          q: "¿Puedo pagar en CUP?",
+          a: "Sí. Los precios se fijan en USD y, si prefiere pagar en CUP, se calcula con la tasa del día de la factura. También aceptamos efectivo en USD, transferencia y pagos desde el exterior.",
+        },
+        {
+          q: "¿Funciona si se va la luz o no hay datos?",
+          a: "Nuestras apps de gestión están hechas para eso: guardan todo en el dispositivo y sincronizan cuando vuelve la conexión. Las webs están optimizadas para cargar rápido con datos móviles.",
+        },
+        {
+          q: "¿Cuánto tiempo tarda?",
+          a: "Una web de presencia, de 3 a 7 días. Una tienda online, de 2 a 4 semanas. Un sistema de gestión, de 3 a 8 semanas. Cada semana le mostramos el avance.",
+        },
+        {
+          q: "¿Qué pasa después de la entrega?",
+          a: "Le enseñamos a usarlo y quedamos a cargo del hosting, las copias de seguridad y los cambios menores con el plan de mantenimiento. El primer mes va incluido.",
+        },
+        {
+          q: "¿El sistema es mío?",
+          a: "Sí. Al terminar de pagar, el código y los datos son suyos. Si un día quiere irse con otro equipo, se lo entregamos todo.",
+        },
+      ],
+    },
+  },
   services: {
     eyebrow: "Lo que hacemos",
     title: "Paquetes con precio claro, sin sorpresas",
