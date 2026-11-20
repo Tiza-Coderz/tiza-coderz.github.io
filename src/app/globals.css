@@ -156,3 +156,86 @@
     }
   }
 }
+
+/* Texto largo de los casos de estudio (MDX). */
+@utility prose-tz {
+  color: var(--fg);
+  font-size: 1.0625rem;
+  line-height: 1.75;
+
+  & > * + * {
+    margin-top: 1.1em;
+  }
+  & h2 {
+    margin-top: 2.2em;
+    font-size: 1.6rem;
+    line-height: 1.25;
+    font-weight: 700;
+    letter-spacing: -0.015em;
+  }
+  & h2::before {
+    content: "";
+    display: block;
+    width: 3rem;
+    height: 0.3rem;
+    margin-bottom: 0.9rem;
+    border-radius: 999px;
+    background: var(--color-chalk-yellow);
+    transform: rotate(-2deg);
+  }
+  & h2:first-child {
+    margin-top: 0;
+  }
+  & h3 {
+    margin-top: 1.8em;
+    font-size: 1.2rem;
+    font-weight: 700;
+  }
+  & p,
+  & li {
+    color: var(--fg-muted);
+  }
+  & strong {
+    color: var(--fg);
+    font-weight: 650;
+  }
+  & a {
+    color: var(--accent-text);
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+  & ul,
+  & ol {
+    padding-left: 1.25rem;
+  }
+  & ul {
+    list-style: disc;
+  }
+  & ol {
+    list-style: decimal;
+  }
+  & li + li {
+    margin-top: 0.45em;
+  }
+  & li::marker {
+    color: var(--color-brand-400);
+  }
+  & code {
+    font-size: 0.9em;
+    padding: 0.15em 0.4em;
+    border-radius: 0.375rem;
+    background: var(--bg-soft);
+    border: 1px solid var(--border);
+  }
+  & blockquote {
+    margin-top: 2em;
+    padding: 1rem 1.25rem;
+    border-left: 4px solid var(--color-chalk-yellow);
+    border-radius: 0 0.75rem 0.75rem 0;
+    background: var(--bg-soft);
+  }
+  & blockquote p {
+    color: var(--fg);
+  }
+}
