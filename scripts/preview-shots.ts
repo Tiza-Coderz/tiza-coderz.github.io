@@ -47,6 +47,17 @@ async function main() {
           await page.goto(`http://localhost:${PORT}${route}`, { waitUntil: "networkidle" });
           // Las animaciones de scroll dejan secciones a medio aparecer en una captura de página entera.
           await page.addStyleTag({ content: ".reveal{animation:none!important}" });
+          if (full) {
+            // Recorre la página para que carguen las imágenes con loading="lazy".
+            await page.evaluate(async () => {
+              for (let y = 0; y < document.body.scrollHeight; y += 600) {
+                window.scrollTo(0, y);
+                await new Promise((r) => setTimeout(r, 60));
+              }
+              window.scrollTo(0, 0);
+            });
+            await page.waitForLoadState("networkidle");
+          }
           const slug = route.replace(/\//g, "_").replace(/^_|_$/g, "") || "root";
           const file = path.join(DEST, `${slug}-${vp.name}-${scheme}.png`);
           await page.screenshot({ path: file, fullPage: full });
