@@ -49,7 +49,9 @@ export function Section({
         {eyebrow || title || intro ? (
           <header className={`mb-10 max-w-2xl sm:mb-14 ${centered ? "mx-auto text-center" : ""}`}>
             {eyebrow ? (
-              <p className="font-chalk text-2xl leading-none text-accent">{eyebrow}</p>
+              <p className="text-sm font-semibold tracking-wider text-accent uppercase">
+                {eyebrow}
+              </p>
             ) : null}
             {title ? (
               <Heading
@@ -75,13 +77,13 @@ export function Badge({
   tone = "neutral",
 }: {
   children: ReactNode;
-  tone?: "neutral" | "brand" | "chalk";
+  tone?: "neutral" | "brand" | "highlight";
 }) {
   const tones = {
     neutral: "border-line bg-bg-soft text-fg-muted",
     brand:
       "border-brand-200 bg-brand-50 text-brand-800 dark:border-brand-800 dark:bg-brand-950 dark:text-brand-200",
-    chalk: "border-chalk-yellow/50 bg-chalk-yellow/15 text-brand-900 dark:text-chalk-yellow",
+    highlight: "border-highlight/50 bg-highlight/15 text-brand-900 dark:text-highlight",
   } as const;
   return (
     <span
