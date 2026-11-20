@@ -28,7 +28,7 @@ export function ProjectCard({
   priority?: boolean;
 }) {
   return (
-    <article className="group relative flex flex-col overflow-hidden rounded-(--radius-card) border border-line bg-surface shadow-sm shadow-black/[0.03] transition-[border-color,box-shadow,transform] duration-300 hover:-translate-y-0.5 hover:border-brand-300 hover:shadow-lg dark:hover:border-brand-700">
+    <article className="group relative flex h-full flex-col overflow-hidden rounded-(--radius-card) border border-line bg-surface shadow-sm shadow-black/[0.03] transition-[border-color,box-shadow,transform] duration-300 hover:-translate-y-0.5 hover:border-brand-300 hover:shadow-lg dark:hover:border-brand-700">
       <div className="aspect-[8/5] overflow-hidden bg-brand-900">
         {/* eslint-disable-next-line @next/next/no-img-element -- export estático: imágenes ya optimizadas en WebP */}
         <img

@@ -53,7 +53,7 @@ export default async function HomePage({ params }: PageProps<"/[lang]">) {
         intro={dict.projects.featuredIntro}
         tone="soft"
       >
-        <ul className="grid gap-6 sm:grid-cols-2">
+        <ul className="grid auto-rows-fr gap-6 sm:grid-cols-2">
           {featured.map((project) => (
             <li key={project.slug} className="reveal">
               <ProjectCard project={toCardData(project, locale, dict)} labels={cardLabels(dict)} />

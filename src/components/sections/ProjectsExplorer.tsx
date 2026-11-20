@@ -89,10 +89,10 @@ export function ProjectsExplorer({
       {visible.length === 0 ? (
         <p className="py-12 text-center text-fg-muted">{labels.empty}</p>
       ) : (
-        <ul className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <ul className="grid auto-rows-fr gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {visible.map((project, i) => (
             <li key={project.slug} className="flex">
-              <div className="w-full">
+              <div className="h-full w-full">
                 <ProjectCard project={project} labels={labels} priority={i < 3} />
               </div>
             </li>
