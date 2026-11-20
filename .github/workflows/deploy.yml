@@ -1,0 +1,66 @@
+name: Deploy a GitHub Pages
+
+# Cada push a main (es decir, cada release o hotfix fusionado) publica el sitio.
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Un solo despliegue a la vez; no se cancela uno en curso para no dejar el sitio a medias.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    name: Build estático
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: pnpm
+
+      - run: pnpm install --frozen-lockfile
+
+      - name: Tests
+        run: pnpm test
+
+      - id: pages
+        uses: actions/configure-pages@v5
+
+      - name: Build (output export)
+        run: pnpm build
+        env:
+          # Variables del repositorio (Settings → Secrets and variables → Actions → Variables).
+          NEXT_PUBLIC_SITE_URL: ${{ vars.SITE_URL || steps.pages.outputs.origin }}
+          NEXT_PUBLIC_BASE_PATH: ${{ vars.BASE_PATH }}
+          NEXT_PUBLIC_FORMSPREE_ID: ${{ vars.FORMSPREE_ID }}
+
+      # Sin Jekyll, GitHub Pages sirve tal cual las carpetas que empiezan por "_" (/_next).
+      - run: touch out/.nojekyll
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: out
+
+  deploy:
+    name: Publicar
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
