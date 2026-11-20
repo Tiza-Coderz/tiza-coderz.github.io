@@ -16,7 +16,6 @@ export function professionalServiceJsonLd(locale: Locale, dict: Dictionary) {
     "@id": `${absoluteUrl("/")}#organizacion`,
     name: company.name,
     alternateName: "Tiza Coders",
-    slogan: company.slogan[locale],
     description: dict.meta.defaultDescription,
     url,
     logo: absoluteUrl("/icons/icon-512.png"),

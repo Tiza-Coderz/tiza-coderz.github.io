@@ -86,9 +86,8 @@ export const en: Dictionary = {
     },
     process: {
       eyebrow: "How we work",
-      title: "From the idea on the chalkboard to a working system",
+      title: "From the idea to a working system",
       intro: "A clear 5-step process, so you always know what's being done and how much is left.",
-      duration: "Duration",
       deliverable: "You get",
       seeMore: "See the full process",
     },
@@ -248,11 +247,6 @@ export const en: Dictionary = {
     title: "A Havana studio that understands how your business works",
     intro:
       "Tiza Coderz was born to solve the real problems of Cuban small businesses: two currencies, a rate that changes every week, blackouts, expensive data and customers who write on WhatsApp. We don't sell technology: we make your business run better.",
-    nameStory: {
-      title: 'Why "Tiza" (chalk)?',
-      text: "Because that's how every project starts: you explain your idea as if you were drawing it on a chalkboard, and we turn it into software that works. From a chalk sketch to a system that sells.",
-      spelling: "It's spelled Tiza Coderz, with a z at the end.",
-    },
     mission: {
       title: "Our mission",
       text: "To give any Cuban small business the same software a large company has, at a price that makes sense for the business, built by people who know its reality.",

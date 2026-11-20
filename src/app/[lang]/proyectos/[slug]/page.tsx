@@ -84,7 +84,7 @@ export default async function CaseStudyPage({ params }: Props) {
             </nav>
             <div className="mt-5 flex flex-wrap gap-2">
               <Badge tone="brand">{dict.projects.sectors[project.sector]}</Badge>
-              <Badge tone="chalk">{dict.projects.kind[project.kind]}</Badge>
+              <Badge tone="highlight">{dict.projects.kind[project.kind]}</Badge>
             </div>
             <h1 className="mt-4 text-4xl font-extrabold tracking-tight text-balance sm:text-5xl">
               {project.title}
@@ -159,7 +159,7 @@ export default async function CaseStudyPage({ params }: Props) {
       {/* Problema → Solución → Resultado (cuerpo MDX) */}
       <Container className="pb-8">
         {project.isFallback ? (
-          <p className="mx-auto mb-8 max-w-3xl rounded-xl bg-chalk-yellow/15 px-4 py-3 text-sm">
+          <p className="mx-auto mb-8 max-w-3xl rounded-xl bg-highlight/15 px-4 py-3 text-sm">
             {t.fallbackNote}
           </p>
         ) : null}
@@ -296,7 +296,7 @@ export default async function CaseStudyPage({ params }: Props) {
                 ) : null}
               </ul>
               {project.demoCredentials ? (
-                <div className="mt-6 rounded-xl border border-chalk-yellow/40 bg-chalk-yellow/15 p-4">
+                <div className="mt-6 rounded-xl border border-highlight/40 bg-highlight/15 p-4">
                   <p className="text-sm font-semibold">{t.credentials}</p>
                   <dl className="mt-2 grid grid-cols-[auto_1fr] gap-x-4 gap-y-1 text-sm">
                     <dt className="text-fg-muted">{t.user}</dt>
@@ -322,7 +322,7 @@ export default async function CaseStudyPage({ params }: Props) {
 
       {/* Llamada a la acción */}
       <Container className="pb-12">
-        <div className="reveal rounded-[2rem] bg-chalkboard px-6 py-12 text-center text-white sm:px-12">
+        <div className="reveal rounded-[2rem] bg-brand-panel px-6 py-12 text-center text-white sm:px-12">
           <h2 className="text-3xl font-bold tracking-tight text-balance">{t.ctaTitle}</h2>
           <p className="mx-auto mt-3 max-w-2xl text-white/80">{t.ctaText}</p>
           <div className="mt-8 flex justify-center">

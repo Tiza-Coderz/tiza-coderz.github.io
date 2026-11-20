@@ -4,8 +4,7 @@
 
 # Tiza Coderz · Web corporativa
 
-**Apps, webs y sistemas a la medida para mipymes cubanas.**
-_Del boceto en tiza al software que vende._
+**Diseño, apps, webs y sistemas a la medida para mipymes cubanas.**
 
 [![CI](https://github.com/Tiza-Coderz/tiza-coderz.github.io/actions/workflows/ci.yml/badge.svg?branch=develop)](https://github.com/Tiza-Coderz/tiza-coderz.github.io/actions/workflows/ci.yml)
 [![Deploy](https://github.com/Tiza-Coderz/tiza-coderz.github.io/actions/workflows/deploy.yml/badge.svg)](https://github.com/Tiza-Coderz/tiza-coderz.github.io/actions/workflows/deploy.yml)
@@ -39,7 +38,7 @@ Esta web es la **oficina en línea del estudio Tiza Coderz**. Su trabajo es conv
 | 🗂️ **Portafolio**        | Grid filtrable por sector (`?sector=ecommerce` compartible). Cada proyecto es un MDX en [`content/projects/`](content/projects) con frontmatter validado.                                                                                                                                                      |
 | 📄 **Casos de estudio**  | `/proyectos/[slug]`: Problema → Solución → Resultado → Capturas → Stack → Enlaces, con credenciales demo, imagen Open Graph propia y JSON-LD.                                                                                                                                                                  |
 | 🧭 **Proceso**           | 1 Conversación · 2 Propuesta · 3 Diseño · 4 Desarrollo con demos semanales · 5 Entrega y mantenimiento ([`data/process.ts`](data/process.ts)).                                                                                                                                                                 |
-| 🏢 **Nosotros**          | Historia del nombre, misión, valores, equipo (fundador con [CV en PDF](public/cv.pdf)) y colaboradores.                                                                                                                                                                                                        |
+| 🏢 **Nosotros**          | Presentación del estudio, misión, valores, equipo (fundador con [CV en PDF](public/cv.pdf)) y colaboradores.                                                                                                                                                                                                   |
 | ✉️ **Contacto**          | WhatsApp, correo, ubicación y formulario accesible: envía por **Formspree** si está configurado; si no, abre **WhatsApp** o el **correo** con el mensaje ya escrito. Estados de envío, éxito y error de red/servidor.                                                                                          |
 | 💬 **Testimonios**       | Array editable en [`data/testimonials.ts`](data/testimonials.ts). La sección se oculta mientras esté vacío (solo testimonios reales).                                                                                                                                                                          |
 | 🌐 **ES / EN**           | Diccionarios tipados (`en.ts` debe tener las mismas claves que `es.ts`; lo comprueban TypeScript y un test). Español por defecto.                                                                                                                                                                              |
@@ -79,7 +78,7 @@ Se regeneran con `pnpm build && pnpm shots /es/ /es/servicios/ …` (ver [Script
 | ----------- | ------------------------------------------------------------------------------------------------------- |
 | Framework   | **Next.js 16** (App Router, `output: 'export'`: HTML estático, sin servidor)                            |
 | Lenguaje    | **TypeScript** estricto (`strict` + `noUncheckedIndexedAccess`)                                         |
-| Estilos     | **Tailwind CSS 4** con tokens de marca, Inter + Caveat autoalojadas, iconos SVG en línea                |
+| Estilos     | **Tailwind CSS 4** con tokens de marca, fuente Inter autoalojada, iconos SVG en línea                   |
 | Contenido   | **MDX** (`@mdx-js/mdx` + `remark-gfm`) compilado en el build, frontmatter con **gray-matter** + **Zod** |
 | Formularios | **Formspree** (opcional) · WhatsApp (`wa.me`) · `mailto`                                                |
 | Calidad     | ESLint, Prettier (+ orden de clases Tailwind), **Vitest** (69 tests)                                    |

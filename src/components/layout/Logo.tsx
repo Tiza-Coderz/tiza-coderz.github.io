@@ -1,5 +1,5 @@
 /**
- * Isotipo: una pizarra con «</>» escrito en tiza y un trazo amarillo.
+ * Isotipo: «</>» en blanco sobre el azul de marca.
  * Es el mismo dibujo que `src/app/icon.svg` (favicon).
  */
 export function LogoMark({ className = "size-9" }: { className?: string }) {
@@ -28,13 +28,6 @@ export function LogoMark({ className = "size-9" }: { className?: string }) {
         <path d="M42 21l10 11-10 11" />
         <path d="M36 17 28 47" />
       </g>
-      <path
-        d="M15 53c8-2.2 25-2.6 34-.6"
-        fill="none"
-        stroke="#f5c84c"
-        strokeWidth="3.5"
-        strokeLinecap="round"
-      />
     </svg>
   );
 }

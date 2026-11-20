@@ -47,7 +47,7 @@ export default async function ProcessPage({ params }: PageProps<"/[lang]/proceso
         </ul>
       </Section>
 
-      <CtaBand locale={locale} dict={dict} />
+      <CtaBand dict={dict} />
     </>
   );
 }

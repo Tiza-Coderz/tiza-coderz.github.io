@@ -6,6 +6,17 @@ Todos los cambios relevantes de este proyecto. Formato basado en
 
 ## [Sin publicar]
 
+### Cambiado
+
+- Diseño más sobrio: se elimina la tipografía manuscrita y todos los adornos «de tiza» (subrayados a mano, trazos amarillos, textura de puntos, trazo del logo). Se mantiene la estructura, el azul de marca y el amarillo como color de acento.
+- El eslogan deja de mostrarse en el pie, en la banda de contacto, en los datos estructurados y en las imágenes para compartir.
+- «Cómo trabajamos» ya no muestra la duración de cada etapa.
+- Portadas, imágenes Open Graph, iconos y capturas de la documentación regenerados con el nuevo estilo.
+
+### Eliminado
+
+- Sección «¿Por qué Tiza?» de Nosotros.
+
 ## [1.2.0] - 2026-11-20
 
 ### Añadido

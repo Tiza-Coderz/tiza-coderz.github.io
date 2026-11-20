@@ -6,12 +6,6 @@ import type { Localized } from "@/i18n/config";
  */
 export const company = {
   name: "Tiza Coderz",
-  /** Cómo se pronuncia/deletrea, para evitar búsquedas mal escritas. */
-  spelling: { es: "Tiza Coders, con zeta al final", en: "Tiza Coders, with a z at the end" },
-  slogan: {
-    es: "Del boceto en tiza al software que vende.",
-    en: "From a chalk sketch to software that sells.",
-  } satisfies Localized,
   shortDescription: {
     es: "Estudio de diseño y desarrollo en La Habana. Hacemos diseño, apps, webs y sistemas a la medida para mipymes cubanas.",
     en: "Design and software studio in Havana. We create custom design, apps, websites and business systems for Cuban small businesses.",

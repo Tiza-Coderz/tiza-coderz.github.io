@@ -20,7 +20,7 @@ export default function GlobalNotFound() {
       <body className="grid min-h-dvh place-items-center p-6">
         <main className="max-w-md text-center">
           <LogoMark className="mx-auto size-14" />
-          <p className="mt-6 font-chalk text-6xl text-accent">404</p>
+          <p className="mt-6 text-6xl font-extrabold text-accent">404</p>
           <h1 className="mt-2 text-2xl font-bold">Página no encontrada</h1>
           <p className="mt-2 text-fg-muted">La página que busca no existe o cambió de dirección.</p>
           <p className="mt-1 text-sm text-fg-muted" lang="en">
