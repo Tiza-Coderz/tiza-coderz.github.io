@@ -150,6 +150,15 @@ export const IconWrench = (p: IconProps) => (
   </Svg>
 );
 
+export const IconPalette = (p: IconProps) => (
+  <Svg {...p}>
+    <path d="M12 3a9 9 0 1 0 0 18c1.1 0 1.8-.9 1.8-1.9 0-.5-.2-.9-.5-1.3-.3-.3-.5-.8-.5-1.3 0-1 .8-1.8 1.8-1.8H17a4 4 0 0 0 4-4C21 6.5 17 3 12 3Z" />
+    <circle cx="7.5" cy="11" r="1.2" />
+    <circle cx="10" cy="7" r="1.2" />
+    <circle cx="14.5" cy="7" r="1.2" />
+  </Svg>
+);
+
 export const IconWifiOff = (p: IconProps) => (
   <Svg {...p}>
     <path d="M2 2l20 20M8.5 16.5a5 5 0 0 1 7 0M5 13a10 10 0 0 1 5.2-2.8M19 13a10 10 0 0 0-2-1.5M2 8.8a15 15 0 0 1 4.2-2.7M22 8.8A15 15 0 0 0 11 5" />

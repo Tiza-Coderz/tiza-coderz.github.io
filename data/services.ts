@@ -1,10 +1,11 @@
 import type { Localized } from "@/i18n/config";
 
 /**
- * Paquetes de servicios. Los precios son «desde» en USD; el equivalente en CUP
- * se calcula con `data/exchange-rate.ts`. Para cambiar un precio, edítelo aquí.
+ * Servicios que ofrece el estudio. No se publican precios ni plazos: cada
+ * proyecto se cotiza a la medida en la primera conversación.
  */
-export type ServiceIcon = "globe" | "qr" | "cart" | "chart" | "phone" | "sparkles" | "wrench";
+export type ServiceIcon =
+  "palette" | "globe" | "qr" | "cart" | "chart" | "phone" | "sparkles" | "wrench";
 
 export type Service = {
   id: string;
@@ -14,17 +15,41 @@ export type Service = {
   summary: Localized;
   includes: Localized<string[]>;
   idealFor: Localized;
-  priceFromUsd: number;
-  priceToUsd?: number;
-  /** `monthly` = cuota mensual (mantenimiento). */
-  billing: "one-time" | "monthly";
-  timeline: Localized;
   /** Slugs de `content/projects` que sirven de ejemplo. */
   examples: string[];
   featured: boolean;
 };
 
 export const services: Service[] = [
+  {
+    id: "diseno",
+    icon: "palette",
+    name: { es: "Diseño UX/UI y de marca", en: "UX/UI and brand design" },
+    summary: {
+      es: "Que su negocio se vea profesional y que sus clientes encuentren todo a la primera: desde el logo hasta cada pantalla de su app.",
+      en: "Make your business look professional and let customers find everything at first glance: from the logo to every screen of your app.",
+    },
+    includes: {
+      es: [
+        "Diseño de interfaces (UI) para apps y webs",
+        "Experiencia de usuario (UX): flujos simples y prototipos navegables en Figma",
+        "Identidad visual: logo, colores y tipografía",
+        "Piezas para redes sociales, menús y materiales impresos",
+      ],
+      en: [
+        "Interface design (UI) for apps and websites",
+        "User experience (UX): simple flows and clickable Figma prototypes",
+        "Visual identity: logo, colors and typography",
+        "Social media assets, menus and printed materials",
+      ],
+    },
+    idealFor: {
+      es: "Negocios que empiezan, que quieren renovar su imagen o que ya tienen un sistema difícil de usar.",
+      en: "New businesses, businesses refreshing their image, or anyone with a system that is hard to use.",
+    },
+    examples: ["portafolio-kamila"],
+    featured: true,
+  },
   {
     id: "presencia",
     icon: "globe",
@@ -51,10 +76,6 @@ export const services: Service[] = [
       es: "Negocios que hoy solo existen en Instagram o por recomendación.",
       en: "Businesses that today only exist on Instagram or by word of mouth.",
     },
-    priceFromUsd: 150,
-    priceToUsd: 300,
-    billing: "one-time",
-    timeline: { es: "3 a 7 días", en: "3 to 7 days" },
     examples: [],
     featured: false,
   },
@@ -84,10 +105,6 @@ export const services: Service[] = [
       es: "Restaurantes, cafeterías, dulcerías y tiendas con catálogo cambiante.",
       en: "Restaurants, cafés, bakeries and shops with a changing catalog.",
     },
-    priceFromUsd: 250,
-    priceToUsd: 600,
-    billing: "one-time",
-    timeline: { es: "1 a 2 semanas", en: "1 to 2 weeks" },
     examples: [],
     featured: true,
   },
@@ -117,10 +134,6 @@ export const services: Service[] = [
       es: "Tiendas de combos, mercados online y negocios que venden por WhatsApp.",
       en: "Grocery-bundle shops, online markets and businesses selling via WhatsApp.",
     },
-    priceFromUsd: 500,
-    priceToUsd: 1200,
-    billing: "one-time",
-    timeline: { es: "2 a 4 semanas", en: "2 to 4 weeks" },
     examples: ["comboya"],
     featured: true,
   },
@@ -150,10 +163,6 @@ export const services: Service[] = [
       es: "Mini-mercados, ferreterías, talleres y distribuidoras.",
       en: "Mini-markets, hardware stores, repair shops and distributors.",
     },
-    priceFromUsd: 900,
-    priceToUsd: 3000,
-    billing: "one-time",
-    timeline: { es: "3 a 8 semanas", en: "3 to 8 weeks" },
     examples: ["cajafacil", "tallertrack", "negocioclaro"],
     featured: true,
   },
@@ -183,10 +192,6 @@ export const services: Service[] = [
       es: "Mensajerías, negocios con trabajadores en la calle y productos propios.",
       en: "Delivery services, businesses with field staff and digital products.",
     },
-    priceFromUsd: 1500,
-    priceToUsd: 5000,
-    billing: "one-time",
-    timeline: { es: "1 a 3 meses", en: "1 to 3 months" },
     examples: ["cajafacil", "bys"],
     featured: true,
   },
@@ -216,10 +221,6 @@ export const services: Service[] = [
       es: "Negocios con muchos mensajes repetidos o tareas manuales diarias.",
       en: "Businesses with lots of repeated messages or daily manual tasks.",
     },
-    priceFromUsd: 300,
-    priceToUsd: 1500,
-    billing: "one-time",
-    timeline: { es: "1 a 3 semanas", en: "1 to 3 weeks" },
     examples: ["reelbridge"],
     featured: true,
   },
@@ -244,10 +245,6 @@ export const services: Service[] = [
       es: "Todos nuestros clientes. El primer mes va incluido.",
       en: "All our clients. The first month is included.",
     },
-    priceFromUsd: 25,
-    priceToUsd: 150,
-    billing: "monthly",
-    timeline: { es: "Mensual", en: "Monthly" },
     examples: [],
     featured: false,
   },

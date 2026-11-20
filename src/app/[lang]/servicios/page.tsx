@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { services } from "@data/services";
 import { CtaBand } from "@/components/sections/CtaBand";
-import { RateNote, ServicesGrid } from "@/components/sections/Services";
+import { QuoteNote, ServicesGrid } from "@/components/sections/Services";
 import { ButtonExternal } from "@/components/ui/Button";
 import { IconCheck, IconWhatsApp } from "@/components/ui/Icons";
 import { Card, Section } from "@/components/ui/Layout";
@@ -31,7 +31,7 @@ export default async function ServicesPage({ params }: PageProps<"/[lang]/servic
     <>
       <Section as="h1" eyebrow={t.eyebrow} title={t.title} intro={t.intro}>
         <ServicesGrid services={services} locale={locale} dict={dict} detailed />
-        <RateNote locale={locale} dict={dict} />
+        <QuoteNote dict={dict} />
       </Section>
 
       <Section tone="soft">

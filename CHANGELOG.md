@@ -6,6 +6,18 @@ Todos los cambios relevantes de este proyecto. Formato basado en
 
 ## [Sin publicar]
 
+### Añadido
+
+- Servicio «Diseño UX/UI y de marca» (interfaces, prototipos, identidad visual y piezas para redes), con pregunta frecuente propia y opción en el formulario de contacto.
+
+### Cambiado
+
+- Los servicios ya no muestran precios ni plazos: cada proyecto se cotiza a la medida. Se actualizan textos, preguntas frecuentes, SEO, JSON-LD (sin `priceSpecification`) e imagen Open Graph del sitio.
+
+### Eliminado
+
+- Tasa de cambio de servicios (`data/exchange-rate.ts`) y su lógica de conversión, que ya no se usan.
+
 ## [1.1.0] - 2026-11-20
 
 ### Añadido

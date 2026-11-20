@@ -5,7 +5,7 @@ export const en: Dictionary = {
     siteName: "Tiza Coderz",
     defaultTitle: "Tiza Coderz · Apps, websites and systems for Cuban small businesses",
     defaultDescription:
-      "Software studio in Havana. Online stores, business management systems, mobile apps and AI automation for Cuban small businesses. Prices in USD and CUP.",
+      "Design and software studio in Havana. UX/UI and brand design, online stores, business management systems, mobile apps and AI automation for Cuban small businesses.",
   },
   a11y: {
     skipToContent: "Skip to content",
@@ -45,10 +45,14 @@ export const en: Dictionary = {
       titleStart: "Custom apps and systems that help your small business",
       titleHighlight: "sell more",
       subtitle:
-        "Control your inventory and your cash register, stop losing orders and get paid in USD and CUP. Everything we build works even on a poor connection.",
+        "We design and build your business software: control your inventory and your cash register, stop losing orders and get paid in USD and CUP. Everything works even on a poor connection.",
       ctaWhatsapp: "Message us on WhatsApp",
       ctaProjects: "See projects",
-      trust: ["Prices in USD and CUP", "Works on slow data or offline", "Weekly demos"],
+      trust: [
+        "Design and development in one team",
+        "Works on slow data or offline",
+        "Weekly demos",
+      ],
       visualAlt:
         "Three apps built by Tiza Coderz on a phone: point of sale, online store and financial dashboard",
     },
@@ -98,7 +102,7 @@ export const en: Dictionary = {
       items: [
         {
           q: "How much does an app or website cost?",
-          a: "It depends on what you need, but every package has a starting price: a presence website from 150 USD, an online store from 500 USD and a management system from 900 USD. In the first conversation we give you a fixed price in writing.",
+          a: "Every project is different, so we don't publish a price list. After a free first conversation we send you a proposal with a fixed price in writing, with no commitment.",
         },
         {
           q: "Can I pay in CUP?",
@@ -110,7 +114,11 @@ export const en: Dictionary = {
         },
         {
           q: "How long does it take?",
-          a: "A presence website, 3 to 7 days. An online store, 2 to 4 weeks. A management system, 3 to 8 weeks. We show you the progress every week.",
+          a: "It depends on the scope of your project. The proposal includes a timeline in writing and, during development, we show you the progress every week.",
+        },
+        {
+          q: "Do you also do design?",
+          a: "Yes. We design app and website interfaces (UX/UI), clickable prototypes and visual identity: logo, colors, typography and social media assets. You can hire design only or the full project.",
         },
         {
           q: "What happens after launch?",
@@ -125,14 +133,9 @@ export const en: Dictionary = {
   },
   services: {
     eyebrow: "What we do",
-    title: "Clear-priced packages, no surprises",
+    title: "Design and development tailored to your business",
     intro:
-      "You are not buying programming hours: you are buying a result for your business. Every package has a starting price and a timeline; we tailor it to your case in a free first conversation.",
-    from: "From",
-    upTo: "up to {price}",
-    perMonth: "per month",
-    approxCup: "≈ {amount}",
-    timeline: "Timeline",
+      "You are not buying programming hours: you are buying a result for your business. From designing your brand and screens to a working system. Every project is quoted to fit, in a free first conversation.",
     includes: "Includes",
     idealFor: "Ideal for",
     quote: "Request a quote",
@@ -140,11 +143,11 @@ export const en: Dictionary = {
     seeAll: "See all services",
     quoteMessage:
       'Hi Tiza Coderz, I\'m interested in the "{service}" package. Could you send me more information for my business?',
-    rateNote:
-      "Prices in USD. The CUP amount is approximate: {rate} CUP per USD, rate as of {date}.",
-    pageTitle: "Services and pricing",
+    quoteNote:
+      "We don't work with fixed rates: tell us about your case and we'll send you a proposal with price and timeline in writing, free and with no commitment.",
+    pageTitle: "Services",
     pageDescription:
-      "Websites, catalogs and QR menus, online stores, management systems, mobile apps and AI automation for Cuban small businesses. Prices from 150 USD.",
+      "UX/UI and brand design, websites, catalogs and QR menus, online stores, management systems, mobile apps and AI automation for Cuban small businesses.",
     custom: {
       title: "Your idea doesn't fit a package?",
       text: "We also build custom projects: integrations, internal tools, moving from Excel to an app and whatever your business needs. Tell us the problem and we'll propose a solution.",
@@ -321,6 +324,7 @@ export const en: Dictionary = {
       business: "Business name (optional)",
       projectType: "What do you need?",
       projectTypes: {
+        diseno: "Design (logo, brand, screens)",
         presencia: "A website for my business",
         "catalogo-menu-qr": "Catalog or QR menu",
         "tienda-online": "Online store",
@@ -367,7 +371,7 @@ export const en: Dictionary = {
     email: "Send an email",
   },
   footer: {
-    tagline: "Custom apps, websites and systems for Cuban small businesses.",
+    tagline: "Custom design, apps, websites and systems for Cuban small businesses.",
     explore: "Explore",
     contact: "Contact",
     hours: "Hours",

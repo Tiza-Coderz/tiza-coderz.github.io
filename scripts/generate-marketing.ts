@@ -7,6 +7,7 @@
  *
  *   pnpm marketing            # todo
  *   pnpm marketing comboya    # solo un proyecto
+ *   pnpm marketing --site     # solo las imágenes del sitio
  *
  * Las plantillas son HTML + CSS renderizados con Playwright (Edge/Chrome local).
  */
@@ -212,14 +213,14 @@ async function projectImages(browser: Browser, project: Project) {
 
 const siteCopy = {
   es: {
-    kicker: "Estudio de desarrollo · La Habana",
-    title: "Apps, webs y sistemas para mipymes cubanas",
-    sub: "Precios en USD y CUP · Funcionan aunque la conexión sea mala",
+    kicker: "Estudio de diseño y desarrollo · La Habana",
+    title: "Diseño, apps, webs y sistemas para mipymes cubanas",
+    sub: "Diseño y desarrollo · Funciona aunque la conexión sea mala",
   },
   en: {
-    kicker: "Software studio · Havana, Cuba",
-    title: "Apps, websites and systems for Cuban small businesses",
-    sub: "Prices in USD and CUP · Built for slow connections",
+    kicker: "Design & software studio · Havana, Cuba",
+    title: "Design, apps, websites and systems for Cuban small businesses",
+    sub: "Design and development · Built for slow connections",
   },
 } as const;
 
@@ -258,11 +259,12 @@ async function siteImages(browser: Browser) {
 
 async function main() {
   const only = process.argv[2];
-  const projects = getAllProjects("es").filter((p) => !only || p.slug === only);
+  const siteOnly = only === "--site";
+  const projects = siteOnly ? [] : getAllProjects("es").filter((p) => !only || p.slug === only);
   const browser = await chromium.launch({ channel: process.env.PW_CHANNEL ?? "msedge" });
   try {
     for (const project of projects) await projectImages(browser, project);
-    if (!only) await siteImages(browser);
+    if (!only || siteOnly) await siteImages(browser);
   } finally {
     await browser.close();
   }

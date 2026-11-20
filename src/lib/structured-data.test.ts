@@ -20,12 +20,12 @@ describe("professionalServiceJsonLd", () => {
     expect(ld.address.addressCountry).toBe("CU");
   });
 
-  it("publica una oferta por servicio con precio en USD", () => {
+  it("publica una oferta por servicio, sin precios (se cotiza a la medida)", () => {
     expect(ld.hasOfferCatalog.itemListElement).toHaveLength(services.length);
-    for (const offer of ld.hasOfferCatalog.itemListElement) {
-      expect(offer.priceSpecification.priceCurrency).toBe("USD");
-      expect(offer.priceSpecification.minPrice).toBeGreaterThan(0);
-    }
+    expect(ld.hasOfferCatalog.itemListElement.map((o) => o.itemOffered.name)).toContain(
+      "Diseño UX/UI y de marca",
+    );
+    expect(JSON.stringify(ld)).not.toMatch(/price/i);
   });
 
   it("usa URLs absolutas", () => {
