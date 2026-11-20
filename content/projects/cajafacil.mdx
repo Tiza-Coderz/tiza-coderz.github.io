@@ -1,0 +1,56 @@
+---
+title: CajaFácil
+client: "Mini-mercado La Esquina, Playa (negocio de ejemplo)"
+kind: producto
+sector: comercio
+summary: Punto de venta, inventario y caja para mipymes cubanas. Vende en USD y CUP, cuadra la caja por moneda y funciona sin internet.
+problem: Precios en CUP recalculados a mano cada vez que sube la tasa, vueltos mal dados en pagos mixtos y cierres de caja que nunca cuadran.
+solution: Una app de punto de venta para Android y web que convierte precios con la tasa del día, cobra en varias monedas y métodos, y cierra la caja contando billete a billete.
+result: El dueño sabe cuánto vendió, cuánto ganó y cuánto debe haber en la gaveta de cada moneda, aunque se vaya la luz o no haya datos.
+stack: [Flutter, Dart, Riverpod, Drift (SQLite), Supabase, GitHub Actions]
+platforms: [android, web]
+year: 2026
+demoUrl: https://tiza-coderz.github.io/cajafacil/
+repoUrl: https://github.com/Tiza-Coderz/cajafacil
+demoCredentials: { user: "PIN 1234 (dueño) · admin@demo.cu", password: "demo1234" }
+cover: /images/projects/cajafacil/cover.webp
+screenshots:
+  - { src: /images/projects/cajafacil/pos.webp, alt: "Punto de venta con búsqueda y carrito en el móvil", device: mobile }
+  - { src: /images/projects/cajafacil/cobro.webp, alt: "Cobro mixto en USD y CUP con cálculo del vuelto", device: mobile }
+  - { src: /images/projects/cajafacil/caja.webp, alt: "Cierre de caja con conteo por billetes", device: mobile }
+  - { src: /images/projects/cajafacil/reportes.webp, alt: "Reportes de ventas y ganancia", device: mobile }
+  - { src: /images/projects/cajafacil/pos-escritorio.webp, alt: "Punto de venta en pantalla ancha", device: desktop }
+highlights:
+  - { value: "100 % offline", label: "Vende sin internet; sincroniza al volver la señal" }
+  - { value: "USD + CUP", label: "Pago mixto y vuelto en la moneda que pida el cliente" }
+  - { value: "3 roles", label: "Dueño, encargado y cajero con permisos distintos" }
+featured: true
+order: 1
+---
+
+## El problema
+
+Una bodega o un mini-mercado en Cuba vende en **dos monedas a la vez**, con una tasa que cambia casi a diario, cobra en efectivo, Transfermóvil, EnZona o transferencia, y muchas veces **sin conexión**. Lo habitual es una libreta y una calculadora:
+
+- Los precios en CUP se recalculan a mano cada vez que sube la tasa.
+- El vuelto en pagos mixtos (dólares + pesos) se calcula de cabeza y se pierde dinero.
+- Al cierre nadie sabe cuánto debía haber en la gaveta de cada moneda.
+- No se sabe qué productos dejan ganancia ni cuándo reponer.
+
+## La solución
+
+**CajaFácil** funciona en el teléfono o la computadora que el negocio ya tiene:
+
+- **Tasa del día con historial**: todos los precios en CUP se actualizan solos y avisa ante cambios bruscos.
+- **Punto de venta** con búsqueda, lector de código de barras (cámara o USB), ventas a granel y descuentos.
+- **Pago mixto** en efectivo USD/CUP, transferencia, Transfermóvil o EnZona, con **vuelto en la moneda que pida el cliente**. Ticket en PDF de 80 mm o por WhatsApp.
+- **Caja** con apertura, entradas y salidas, y **cierre contando billete a billete** (incluido el de 3 CUP) con la diferencia por moneda.
+- **Inventario** con costo promedio, mermas y kardex por producto.
+- **Reportes** de ventas, ganancia y margen, exportables a PDF y a Excel.
+- **Acceso por PIN** con roles: el cajero no ve las ganancias.
+
+## El resultado
+
+Un sistema que se instala en minutos, **no depende de internet** y le da al dueño lo que la libreta no puede: la caja cuadrada por moneda, la ganancia real y la lista de lo que hay que reponer. Si el negocio tiene varias cajas, se sincronizan cuando hay conexión sin perder ninguna venta.
+
+> Pruebe la demo con el **PIN 1234** (dueño), **2222** (encargada) o **3333** (cajero). Los datos viven en su navegador y puede restablecerlos cuando quiera.

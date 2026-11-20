@@ -1,0 +1,42 @@
+---
+title: BYS · Bienes y Servicios
+client: "BYS Bienes y Servicios (Venezuela)"
+kind: cliente
+sector: servicios
+summary: Mobile app for a services marketplace. Customers request a service, providers send offers, and the customer compares, chooses and pays from the phone.
+problem: Finding a trustworthy provider and comparing prices depended on phone calls and referrals; providers had no organized channel to receive work.
+solution: A Flutter app with customer and provider sign-up, geolocated requests on a map, provider offers, payment of the chosen offer and push notifications at every step.
+result: A platform in production, built with a remote team, mandatory code review, feature branches and automated builds for internal testing.
+stack: [Flutter, Dart, BLoC, Riverpod, GoRouter, Dio, Firebase Auth, FCM, Google Maps]
+platforms: [android, ios]
+year: 2025
+cover: /images/projects/bys/cover.webp
+screenshots: []
+highlights:
+  - { value: "2 apps in 1", label: "Customer and provider flows with different permissions" }
+  - { value: "Maps", label: "Requests with location, address search and geolocation" }
+  - { value: "Push", label: "Real-time alerts for new offers and status changes" }
+featured: false
+order: 10
+---
+
+## The problem
+
+In a services market (repairs, maintenance, trades) customers don't know whom to call or whether the price is fair, and providers depend on word of mouth. **BYS** wanted a platform that connects both sides in an organized way, with payments inside the app.
+
+## The solution
+
+We built the platform's **mobile app** with Flutter:
+
+- **Sign-up and login** with email (verified) or Google, plus password recovery.
+- **Two profiles**: customer and provider, each with its own onboarding and screens.
+- **Service requests** with map location, address search and photos.
+- **Offers**: providers answer each request; the customer compares, accepts and **pays the offer** in the app.
+- **Push notifications** and badges so no offer is missed.
+- Feature-based architecture with **BLoC** and **Riverpod**, dependency injection and a typed HTTP client.
+
+## The result
+
+An app working against the platform's API in a distributed team: **feature branches, code review and hotfixes** without slowing development down. It's the kind of project that shows we can join a client's team and deliver at their pace.
+
+> Private client project: code and a public demo are not published.

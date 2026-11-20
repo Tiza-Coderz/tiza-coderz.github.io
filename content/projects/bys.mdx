@@ -1,0 +1,42 @@
+---
+title: BYS · Bienes y Servicios
+client: "BYS Bienes y Servicios (Venezuela)"
+kind: cliente
+sector: servicios
+summary: App móvil de un marketplace de servicios. El cliente pide un servicio, los proveedores le envían ofertas y él compara, elige y paga desde el teléfono.
+problem: Encontrar un proveedor de confianza y comparar precios dependía de llamadas y recomendaciones; los proveedores no tenían un canal ordenado para recibir trabajo.
+solution: Una app Flutter con registro de clientes y proveedores, solicitudes geolocalizadas en el mapa, ofertas de los proveedores, pago de la oferta elegida y notificaciones push en cada paso.
+result: Una plataforma en producción, con equipo remoto, revisión de código obligatoria, ramas por funcionalidad y builds automáticas para pruebas internas.
+stack: [Flutter, Dart, BLoC, Riverpod, GoRouter, Dio, Firebase Auth, FCM, Google Maps]
+platforms: [android, ios]
+year: 2025
+cover: /images/projects/bys/cover.webp
+screenshots: []
+highlights:
+  - { value: "2 apps en 1", label: "Flujos de cliente y de proveedor con permisos distintos" }
+  - { value: "Mapas", label: "Solicitudes con ubicación, búsqueda de direcciones y geolocalización" }
+  - { value: "Push", label: "Avisos en tiempo real de nuevas ofertas y cambios de estado" }
+featured: false
+order: 10
+---
+
+## El problema
+
+En un mercado de servicios (reparaciones, mantenimiento, oficios) el cliente no sabe a quién llamar ni si el precio es justo, y el proveedor depende del boca a boca. **BYS** quería una plataforma que pusiera a ambos en contacto de forma ordenada y con pagos dentro de la app.
+
+## La solución
+
+Desarrollamos la **aplicación móvil** de la plataforma con Flutter:
+
+- **Registro e inicio de sesión** con correo (con verificación) o con Google, y recuperación de contraseña.
+- **Dos perfiles**: cliente y proveedor, cada uno con su flujo de registro y sus pantallas.
+- **Solicitud de servicio** con ubicación en el mapa, búsqueda de direcciones y fotos.
+- **Ofertas**: los proveedores responden a cada solicitud; el cliente compara, acepta y **paga la oferta** desde la app.
+- **Notificaciones push** y contadores de novedades para no perder ninguna oferta.
+- Arquitectura por funcionalidades con **BLoC** y **Riverpod**, inyección de dependencias y cliente HTTP tipado.
+
+## El resultado
+
+Una app que trabaja contra la API de la plataforma en un equipo distribuido: **ramas por funcionalidad, revisión de código y hotfixes** sin frenar el desarrollo. Es el tipo de proyecto que demuestra que podemos integrarnos en el equipo de un cliente y entregar con su ritmo.
+
+> Proyecto privado del cliente: no se publican el código ni una demo pública.

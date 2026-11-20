@@ -1,0 +1,55 @@
+---
+title: NegocioClaro
+client: "Distribuidora Del Valle, Boyeros (negocio de ejemplo)"
+kind: producto
+sector: finanzas
+summary: Dashboard financiero multimoneda para mipymes cubanas. Ingresos y gastos en USD, CUP, EUR y MLC consolidados con la tasa de cada día.
+problem: Cobros y pagos en cuatro monedas con una tasa que cambia a diario. Con libretas o Excel es casi imposible saber cuánto se ganó de verdad este mes.
+solution: Una app web instalable que registra cada movimiento con su moneda, lo consolida con la tasa de su día y muestra ganancia, gastos, cuentas por cobrar y nómina en una pantalla.
+result: El dueño responde en segundos «¿cuánto gané este mes?», sabe quién le debe y le entrega al contador un informe mensual en PDF o CSV.
+stack: [React 19, Vite, TypeScript, Tailwind CSS, TanStack Query, Supabase, PWA]
+platforms: [web, pwa]
+year: 2026
+demoUrl: https://negocioclaro-three.vercel.app
+repoUrl: https://github.com/Tiza-Coderz/negocioclaro
+demoCredentials: { user: "admin@demo.cu", password: "demo1234" }
+cover: /images/projects/negocioclaro/cover.webp
+screenshots:
+  - { src: /images/projects/negocioclaro/dashboard-movil.webp, alt: "Dashboard con ganancia del mes en el móvil", device: mobile }
+  - { src: /images/projects/negocioclaro/registro-rapido-movil.webp, alt: "Registro rápido de una venta en tres campos", device: mobile }
+  - { src: /images/projects/negocioclaro/cuentas-movil.webp, alt: "Cuentas por cobrar con recordatorio por WhatsApp", device: mobile }
+  - { src: /images/projects/negocioclaro/dashboard-escritorio.webp, alt: "Dashboard financiero en escritorio", device: desktop }
+  - { src: /images/projects/negocioclaro/tasas-escritorio.webp, alt: "Historial de tasas de cambio por fecha", device: desktop }
+highlights:
+  - { value: "4 monedas", label: "USD, CUP, EUR y MLC con la tasa de cada día" }
+  - { value: "5 segundos", label: "para anotar una venta con el registro rápido" }
+  - { value: "143 tests", label: "automáticos sobre el cálculo de dinero y tasas" }
+featured: true
+order: 3
+---
+
+## El problema
+
+El dueño de una mipyme cubana cobra y paga en **cuatro monedas** (CUP en efectivo, USD por Zelle, EUR por TropiPay, MLC por transferencia), con una tasa de cambio que cambia cada día. Con libretas o Excel es casi imposible responder lo básico:
+
+- ¿Cuánto **gané de verdad** este mes, en USD y en CUP?
+- ¿En qué se me va el dinero?
+- ¿Quién me debe y qué facturas ya vencieron?
+- ¿Qué le doy al contador a fin de mes?
+
+## La solución
+
+**NegocioClaro** responde esas preguntas en una pantalla, desde el móvil y aunque la conexión sea mala:
+
+- **Dashboard** con la ganancia neta del mes comparada con el anterior, ingresos, gastos, margen y flujo de caja. Totales en **USD o CUP** con un toque.
+- **Tasas por fecha**: cada movimiento se consolida con la tasa de su día. Corregir una tasa recalcula los movimientos afectados.
+- **Registro rápido** de 3 campos para anotar una venta en 5 segundos; sin señal, se guarda al volver la conexión.
+- **Cuentas por cobrar y por pagar** con vencimientos, pagos parciales y botón **Recordar por WhatsApp** con el mensaje ya redactado.
+- **Nómina** en CUP o USD con bonificaciones y descuentos.
+- **Informe mensual en PDF** y **CSV para el contador** que abre bien en Excel en español.
+
+## El resultado
+
+Una herramienta que convierte el desorden de cuatro monedas en **un número claro**: la ganancia real del mes. Es una PWA que se instala en la pantalla de inicio, carga unos 175 KB al empezar y deja los gráficos y el PDF para cuando se necesitan.
+
+> Entre con **admin@demo.cu / demo1234**. La demo trae 6 meses de movimientos de una distribuidora de alimentos y se restablece sola cada madrugada.
