@@ -3,10 +3,32 @@ import type { Dictionary } from "@/i18n/dictionaries/es";
 import { localePath, type Locale } from "@/i18n/config";
 import { buildWhatsAppUrl } from "./whatsapp";
 
-/** URL pública sin barra final. En CI y producción llega por variable de entorno. */
-export const siteUrl = (
-  process.env.NEXT_PUBLIC_SITE_URL ?? "https://tiza-coderz.github.io"
-).replace(/\/+$/, "");
+export const DEFAULT_SITE_URL = "https://tiza-coderz.github.io";
+
+type Env = Record<string, string | undefined>;
+
+/**
+ * URL pública sin barra final, en este orden:
+ *   1. NEXT_PUBLIC_SITE_URL (dominio propio, configurado a mano)
+ *   2. VERCEL_PROJECT_PRODUCTION_URL (Vercel la expone en cada build: p. ej. tiza-coderz.vercel.app)
+ *   3. GitHub Pages de la organización
+ *
+ * En una vista previa de Vercel se usa igualmente la URL de producción: así los
+ * enlaces canonical apuntan siempre al sitio oficial.
+ */
+export function resolveSiteUrl(env: Env = process.env): string {
+  const explicit = env.NEXT_PUBLIC_SITE_URL?.trim();
+  const vercel = env.VERCEL_PROJECT_PRODUCTION_URL?.trim();
+  const url = explicit || (vercel ? `https://${vercel}` : DEFAULT_SITE_URL);
+  return url.replace(/\/+$/, "");
+}
+
+/** true en los despliegues de vista previa de Vercel (una URL por PR): no deben indexarse. */
+export function isPreviewDeployment(env: Env = process.env): boolean {
+  return env.VERCEL_ENV === "preview";
+}
+
+export const siteUrl = resolveSiteUrl();
 
 export const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
