@@ -6,6 +6,15 @@ Todos los cambios relevantes de este proyecto. Formato basado en
 
 ## [Sin publicar]
 
+### Añadido
+
+- Despliegue en Vercel listo: URL pública detectada con `VERCEL_PROJECT_PRODUCTION_URL`, redirección de `/` según el idioma del navegador, cabeceras de seguridad y guía paso a paso en el README.
+- Las vistas previas de Vercel salen con `noindex` y `robots.txt` bloqueado.
+
+### Cambiado
+
+- Node 22.x fijado en `engines`.
+
 ## [1.0.0] - 2026-11-20
 
 Primera versión pública de la web corporativa de Tiza Coderz.
