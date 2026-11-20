@@ -1,5 +1,6 @@
 import { company } from "@data/company";
 import { services } from "@data/services";
+import { team } from "@data/team";
 import { localePath, locales, type Locale } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/dictionaries/es";
 import type { Project } from "./projects";
@@ -28,6 +29,7 @@ export function professionalServiceJsonLd(locale: Locale, dict: Dictionary) {
       name: company.founder.name,
       jobTitle: company.founder.role[locale],
     },
+    employee: team.map((m) => ({ "@type": "Person", name: m.name, jobTitle: m.role[locale] })),
     address: {
       "@type": "PostalAddress",
       addressLocality: company.city,

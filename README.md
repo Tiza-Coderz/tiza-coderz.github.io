@@ -38,8 +38,8 @@ Esta web es la **oficina en línea del estudio Tiza Coderz**. Su trabajo es conv
 | 🗂️ **Portafolio**        | Grid filtrable por sector (`?sector=ecommerce` compartible). Cada proyecto es un MDX en [`content/projects/`](content/projects) con frontmatter validado.                                                                                                                                                      |
 | 📄 **Casos de estudio**  | `/proyectos/[slug]`: Problema → Solución → Resultado → Capturas → Stack → Enlaces, con credenciales demo, imagen Open Graph propia y JSON-LD.                                                                                                                                                                  |
 | 🧭 **Proceso**           | 1 Conversación · 2 Propuesta · 3 Diseño · 4 Desarrollo con demos semanales · 5 Entrega y mantenimiento ([`data/process.ts`](data/process.ts)).                                                                                                                                                                 |
-| 🏢 **Nosotros**          | Presentación del estudio, misión, valores, equipo (fundador con [CV en PDF](public/cv.pdf)) y colaboradores.                                                                                                                                                                                                   |
-| ✉️ **Contacto**          | WhatsApp, correo, ubicación y formulario accesible: envía por **Formspree** si está configurado; si no, abre **WhatsApp** o el **correo** con el mensaje ya escrito. Estados de envío, éxito y error de red/servidor.                                                                                          |
+| 🏢 **Nosotros**          | Presentación del estudio, misión, valores y equipo desde [`data/team.ts`](data/team.ts): Yanni Fernández (fundador y director técnico, [CV](public/cv.pdf)) y Kamila Aiguesvives (diseñadora gráfica y de marca, [CV](public/cv-kamila-aiguesvives.pdf)), más la red de colaboradores.                         |
+| ✉️ **Contacto**          | WhatsApp, correo, ubicación y formulario accesible que envía por **Formspree** (ID en [`.env.production`](.env.production)), con estados de envío, éxito y error, y alternativas por **WhatsApp** o **correo**.                                                                                                |
 | 💬 **Testimonios**       | Array editable en [`data/testimonials.ts`](data/testimonials.ts). La sección se oculta mientras esté vacío (solo testimonios reales).                                                                                                                                                                          |
 | 🌐 **ES / EN**           | Diccionarios tipados (`en.ts` debe tener las mismas claves que `es.ts`; lo comprueban TypeScript y un test). Español por defecto.                                                                                                                                                                              |
 | 🌙 **Modo oscuro**       | Por preferencia del sistema o manual, sin destello al cargar.                                                                                                                                                                                                                                                  |
@@ -80,7 +80,7 @@ Se regeneran con `pnpm build && pnpm shots /es/ /es/servicios/ …` (ver [Script
 | Lenguaje    | **TypeScript** estricto (`strict` + `noUncheckedIndexedAccess`)                                         |
 | Estilos     | **Tailwind CSS 4** con tokens de marca, fuente Inter autoalojada, iconos SVG en línea                   |
 | Contenido   | **MDX** (`@mdx-js/mdx` + `remark-gfm`) compilado en el build, frontmatter con **gray-matter** + **Zod** |
-| Formularios | **Formspree** (opcional) · WhatsApp (`wa.me`) · `mailto`                                                |
+| Formularios | **Formspree** · WhatsApp (`wa.me`) · `mailto`                                                           |
 | Calidad     | ESLint, Prettier (+ orden de clases Tailwind), **Vitest** (69 tests)                                    |
 | Imágenes    | **sharp** + **Playwright** (capturas, portadas, Open Graph, iconos)                                     |
 | CI/CD       | GitHub Actions: lint → tipos → formato → tests → build; deploy a **GitHub Pages**                       |
@@ -117,13 +117,14 @@ src/
 
 ## Cómo editar el contenido
 
-| Quiero…                            | Edite                                                                                                                         |
-| ---------------------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
-| Cambiar o añadir servicios         | [`data/services.ts`](data/services.ts)                                                                                        |
-| Cambiar teléfono, correo u horario | [`data/company.ts`](data/company.ts)                                                                                          |
-| Añadir un proyecto                 | `content/projects/<slug>.mdx` y `<slug>.en.mdx` + imágenes en `public/images/projects/<slug>/`, luego `pnpm marketing <slug>` |
-| Añadir un testimonio real          | [`data/testimonials.ts`](data/testimonials.ts)                                                                                |
-| Cambiar textos de la interfaz      | `src/i18n/dictionaries/es.ts` y `en.ts`                                                                                       |
+| Quiero…                              | Edite                                                                                                                         |
+| ------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------- |
+| Cambiar o añadir servicios           | [`data/services.ts`](data/services.ts)                                                                                        |
+| Cambiar teléfono, correo u horario   | [`data/company.ts`](data/company.ts)                                                                                          |
+| Añadir o editar a alguien del equipo | [`data/team.ts`](data/team.ts) (CV en `public/`)                                                                              |
+| Añadir un proyecto                   | `content/projects/<slug>.mdx` y `<slug>.en.mdx` + imágenes en `public/images/projects/<slug>/`, luego `pnpm marketing <slug>` |
+| Añadir un testimonio real            | [`data/testimonials.ts`](data/testimonials.ts)                                                                                |
+| Cambiar textos de la interfaz        | `src/i18n/dictionaries/es.ts` y `en.ts`                                                                                       |
 
 Si algo está mal escrito (un sector que no existe, una imagen que falta, una traducción sin una clave), **los tests fallan en el CI** antes de publicar.
 
@@ -160,11 +161,11 @@ pnpm dev                        # http://localhost:3000/es/
 
 Ver [`.env.example`](.env.example). Todas son públicas (no hay secretos):
 
-| Variable                   | Para qué                                                |
-| -------------------------- | ------------------------------------------------------- |
-| `NEXT_PUBLIC_SITE_URL`     | URL pública (canonical, sitemap, Open Graph)            |
-| `NEXT_PUBLIC_BASE_PATH`    | Solo si se publica en un subdirectorio                  |
-| `NEXT_PUBLIC_FORMSPREE_ID` | ID del formulario de Formspree; vacío = WhatsApp/mailto |
+| Variable                   | Para qué                                                                                           |
+| -------------------------- | -------------------------------------------------------------------------------------------------- |
+| `NEXT_PUBLIC_SITE_URL`     | URL pública (canonical, sitemap, Open Graph)                                                       |
+| `NEXT_PUBLIC_BASE_PATH`    | Solo si se publica en un subdirectorio                                                             |
+| `NEXT_PUBLIC_FORMSPREE_ID` | ID del formulario de Formspree. En producción se lee de `.env.production`; vacío = WhatsApp/mailto |
 
 ## Desplegar GRATIS
 
@@ -172,7 +173,7 @@ Ver [`.env.example`](.env.example). Todas son públicas (no hay secretos):
 
 1. El repo se llama `<organización>.github.io`, así que el sitio queda en la raíz: `https://tiza-coderz.github.io/`.
 2. **Settings → Pages → Source: GitHub Actions**.
-3. (Opcional) **Settings → Secrets and variables → Actions → Variables**: `FORMSPREE_ID`, `SITE_URL` (si usa dominio propio) o `BASE_PATH` (si el repo tiene otro nombre, p. ej. `/tiza-web`).
+3. (Opcional) **Settings → Secrets and variables → Actions → Variables**: `SITE_URL` (si usa dominio propio) o `BASE_PATH` (si el repo tiene otro nombre, p. ej. `/tiza-web`).
 4. Cada push a `main` ejecuta [`deploy.yml`](.github/workflows/deploy.yml): tests → build → publicación. Tarda unos 2 minutos.
 5. Dominio propio: añada el dominio en **Settings → Pages → Custom domain**, cree el registro `CNAME` en su DNS y ponga `SITE_URL=https://sudominio.com`.
 
@@ -188,10 +189,9 @@ El repo ya está preparado: [`vercel.json`](vercel.json) fija la instalación co
 4. En **Settings → Git → Production Branch** ponga **`main`** (por defecto Vercel usaría la rama por defecto del repo, que es `develop`).
 5. (Opcional) **Settings → Environment Variables**:
 
-   | Variable                   | Valor                                                       | Entornos            |
-   | -------------------------- | ----------------------------------------------------------- | ------------------- |
-   | `NEXT_PUBLIC_FORMSPREE_ID` | ID de su formulario de Formspree                            | Production, Preview |
-   | `NEXT_PUBLIC_SITE_URL`     | Solo si usa dominio propio, p. ej. `https://tizacoderz.com` | Production          |
+   | Variable               | Valor                                                       | Entornos   |
+   | ---------------------- | ----------------------------------------------------------- | ---------- |
+   | `NEXT_PUBLIC_SITE_URL` | Solo si usa dominio propio, p. ej. `https://tizacoderz.com` | Production |
 
 6. **Deploy**. En unos 2 minutos el sitio queda en `https://<proyecto>.vercel.app`.
 
@@ -212,9 +212,11 @@ pnpm dlx vercel --prod         # despliegue a producción
 
 ### Formulario con Formspree (gratis hasta 50 envíos/mes)
 
-1. Cree una cuenta en [formspree.io](https://formspree.io) con `tizacoders@gmail.com` y un formulario nuevo.
-2. Copie el ID (`https://formspree.io/f/<ID>`) en la variable `FORMSPREE_ID` (GitHub) o `NEXT_PUBLIC_FORMSPREE_ID` (Vercel/local).
-3. Sin ID, el formulario sigue funcionando: abre WhatsApp o el correo del visitante con el mensaje redactado.
+El formulario de Contacto ya está conectado: el ID está en [`.env.production`](.env.production), que Next.js lee al construir tanto en GitHub Pages como en Vercel (no hace falta configurar nada en sus paneles). Los mensajes llegan al correo de la cuenta de Formspree.
+
+- Para cambiar de formulario, edite `NEXT_PUBLIC_FORMSPREE_ID` en `.env.production` y publique una release.
+- La primera vez que alguien envía el formulario, Formspree pide confirmar el correo de destino.
+- Sin ID, el formulario sigue funcionando: abre WhatsApp o el correo del visitante con el mensaje ya escrito.
 
 ## Flujo de trabajo (Git Flow)
 

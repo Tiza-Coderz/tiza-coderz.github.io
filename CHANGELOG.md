@@ -6,6 +6,16 @@ Todos los cambios relevantes de este proyecto. Formato basado en
 
 ## [Sin publicar]
 
+### Añadido
+
+- Kamila Aiguesvives se suma al equipo en «Nosotros» como diseñadora gráfica y de marca, con su CV en PDF accesible desde su tarjeta.
+- El equipo se define en `data/team.ts` y se publica como `employee` en el JSON-LD.
+- Formulario de contacto conectado a Formspree mediante `.env.production`.
+
+### Cambiado
+
+- Las tarjetas del equipo tienen la misma altura y los colaboradores pasan a una tarjeta propia debajo.
+
 ## [1.3.1] - 2026-11-20
 
 ### Corregido
