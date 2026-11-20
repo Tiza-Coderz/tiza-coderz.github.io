@@ -33,16 +33,9 @@ export default async function AboutPage({ params }: PageProps<"/[lang]/nosotros"
   return (
     <>
       <Section as="h1" eyebrow={t.eyebrow} title={t.title} intro={t.intro}>
-        <div className="grid gap-6 lg:grid-cols-2">
-          <div className="reveal rounded-(--radius-card) bg-chalkboard p-8 text-white">
-            <h2 className="text-2xl font-bold">{t.nameStory.title}</h2>
-            <p className="mt-3 leading-relaxed text-white/85">{t.nameStory.text}</p>
-            <p className="mt-5 font-chalk text-2xl text-chalk-yellow">{t.nameStory.spelling}</p>
-          </div>
-          <Card className="reveal">
-            <h2 className="text-2xl font-bold">{t.mission.title}</h2>
-            <p className="mt-3 text-lg leading-relaxed text-fg-muted">{t.mission.text}</p>
-          </Card>
+        <div className="reveal rounded-(--radius-card) bg-brand-panel p-8 text-white sm:p-10">
+          <h2 className="text-2xl font-bold">{t.mission.title}</h2>
+          <p className="mt-3 max-w-3xl text-lg leading-relaxed text-white/85">{t.mission.text}</p>
         </div>
       </Section>
 
@@ -53,7 +46,7 @@ export default async function AboutPage({ params }: PageProps<"/[lang]/nosotros"
               key={v.title}
               className="reveal rounded-(--radius-card) border border-line bg-surface p-6"
             >
-              <span className="font-chalk text-4xl text-chalk-yellow-strong">{i + 1}</span>
+              <span className="text-3xl font-extrabold text-accent">{i + 1}</span>
               <h3 className="mt-2 text-lg font-bold">{v.title}</h3>
               <p className="mt-2 leading-relaxed text-fg-muted">{v.text}</p>
             </li>
@@ -66,7 +59,7 @@ export default async function AboutPage({ params }: PageProps<"/[lang]/nosotros"
           <Card className="reveal sm:flex sm:gap-6 sm:p-8">
             <div
               aria-hidden="true"
-              className="grid size-24 shrink-0 place-items-center rounded-3xl bg-chalkboard font-chalk text-4xl text-white"
+              className="grid size-24 shrink-0 place-items-center rounded-3xl bg-brand-panel text-3xl font-bold text-white"
             >
               {initials}
             </div>
@@ -116,7 +109,7 @@ export default async function AboutPage({ params }: PageProps<"/[lang]/nosotros"
         </div>
       </Section>
 
-      <CtaBand locale={locale} dict={dict} />
+      <CtaBand dict={dict} />
     </>
   );
 }

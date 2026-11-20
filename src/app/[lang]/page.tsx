@@ -72,7 +72,7 @@ export default async function HomePage({ params }: PageProps<"/[lang]">) {
       <ProcessSection locale={locale} dict={dict} />
       <Testimonials locale={locale} dict={dict} />
       <Faq dict={dict} />
-      <CtaBand locale={locale} dict={dict} />
+      <CtaBand dict={dict} />
     </>
   );
 }

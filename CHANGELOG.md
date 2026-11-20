@@ -6,6 +6,19 @@ Todos los cambios relevantes de este proyecto. Formato basado en
 
 ## [Sin publicar]
 
+## [1.3.0] - 2026-11-20
+
+### Cambiado
+
+- Diseño más sobrio: se elimina la tipografía manuscrita y todos los adornos «de tiza» (subrayados a mano, trazos amarillos, textura de puntos, trazo del logo). Se mantiene la estructura, el azul de marca y el amarillo como color de acento.
+- El eslogan deja de mostrarse en el pie, en la banda de contacto, en los datos estructurados y en las imágenes para compartir.
+- «Cómo trabajamos» ya no muestra la duración de cada etapa.
+- Portadas, imágenes Open Graph, iconos y capturas de la documentación regenerados con el nuevo estilo.
+
+### Eliminado
+
+- Sección «¿Por qué Tiza?» de Nosotros.
+
 ## [1.2.0] - 2026-11-20
 
 ### Añadido
@@ -47,7 +60,8 @@ Primera versión pública de la web corporativa de Tiza Coderz.
 - PWA instalable con service worker.
 - CI (lint, tipos, formato, tests, build) y despliegue automático a GitHub Pages; configuración para Vercel.
 
-[Sin publicar]: https://github.com/Tiza-Coderz/tiza-coderz.github.io/compare/v1.2.0...develop
+[Sin publicar]: https://github.com/Tiza-Coderz/tiza-coderz.github.io/compare/v1.3.0...develop
+[1.3.0]: https://github.com/Tiza-Coderz/tiza-coderz.github.io/compare/v1.2.0...v1.3.0
 [1.2.0]: https://github.com/Tiza-Coderz/tiza-coderz.github.io/compare/v1.1.0...v1.2.0
 [1.1.0]: https://github.com/Tiza-Coderz/tiza-coderz.github.io/compare/v1.0.0...v1.1.0
 [1.0.0]: https://github.com/Tiza-Coderz/tiza-coderz.github.io/releases/tag/v1.0.0

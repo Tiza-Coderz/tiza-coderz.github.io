@@ -29,34 +29,15 @@ const heroPhones = [
 export function Hero({ locale, dict }: { locale: Locale; dict: Dictionary }) {
   const t = dict.home.hero;
   return (
-    <section className="relative overflow-hidden bg-chalkboard text-white">
-      {/* Polvo de tiza: puntos muy suaves, solo CSS. */}
-      <div
-        aria-hidden="true"
-        className="absolute inset-0 [background-image:radial-gradient(#fff_1px,transparent_1.2px)] [background-size:22px_22px] opacity-[0.07]"
-      />
+    <section className="relative overflow-hidden bg-brand-panel text-white">
       <Container className="relative grid items-center gap-12 py-16 sm:py-20 lg:grid-cols-[1.1fr_1fr] lg:py-24">
         <div className="animate-fade-up">
-          <p className="font-chalk text-2xl text-chalk-yellow sm:text-3xl">{t.eyebrow}</p>
+          <p className="text-sm font-semibold tracking-wider text-brand-200 uppercase">
+            {t.eyebrow}
+          </p>
           <h1 className="mt-3 text-4xl leading-[1.08] font-extrabold tracking-tight text-balance sm:text-5xl lg:text-6xl">
             {t.titleStart}{" "}
-            <span className="relative whitespace-nowrap">
-              <span className="relative z-10">{t.titleHighlight}</span>
-              <svg
-                aria-hidden="true"
-                viewBox="0 0 300 20"
-                preserveAspectRatio="none"
-                className="absolute -bottom-1 left-0 h-3 w-full text-chalk-yellow sm:h-4"
-              >
-                <path
-                  d="M4 14C60 6 160 4 296 9"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="7"
-                  strokeLinecap="round"
-                />
-              </svg>
-            </span>
+            <span className="whitespace-nowrap text-brand-200">{t.titleHighlight}</span>
           </h1>
           <p className="mt-6 max-w-xl text-lg leading-relaxed text-pretty text-white/80">
             {t.subtitle}
@@ -84,7 +65,7 @@ export function Hero({ locale, dict }: { locale: Locale; dict: Dictionary }) {
           <ul className="mt-8 flex flex-col gap-2 text-sm text-white/85 sm:flex-row sm:flex-wrap sm:gap-x-6">
             {t.trust.map((item) => (
               <li key={item} className="flex items-center gap-2">
-                <IconCheck className="size-4 text-chalk-yellow" />
+                <IconCheck className="size-4 text-brand-200" />
                 {item}
               </li>
             ))}
@@ -161,7 +142,7 @@ export function WhyUs({ dict }: { dict: Dictionary }) {
               key={item.title}
               className="reveal rounded-(--radius-card) border border-line bg-surface p-6"
             >
-              <span className="grid size-11 place-items-center rounded-xl bg-chalk-yellow/20 text-brand-800 dark:text-chalk-yellow">
+              <span className="grid size-11 place-items-center rounded-xl bg-highlight/20 text-brand-800 dark:text-highlight">
                 <Icon className="size-5" />
               </span>
               <h3 className="mt-4 text-lg font-bold">{item.title}</h3>
@@ -205,10 +186,8 @@ export function ProcessTimeline({
               detailed ? "sm:flex sm:gap-6" : ""
             }`}
           >
-            <div className="flex items-center gap-3 sm:shrink-0">
-              <span className="font-chalk text-5xl leading-none text-chalk-yellow-strong">
-                {step.n}
-              </span>
+            <div className="flex items-center gap-3 sm:shrink-0 sm:self-start">
+              <span className="w-7 text-3xl leading-none font-extrabold text-accent">{step.n}</span>
               <span className="grid size-10 place-items-center rounded-xl bg-brand-50 text-brand-700 dark:bg-brand-950 dark:text-brand-300">
                 <Icon className="size-5" />
               </span>
@@ -220,10 +199,6 @@ export function ProcessTimeline({
               </p>
               {detailed ? (
                 <dl className="mt-4 flex flex-wrap gap-x-8 gap-y-2 text-sm">
-                  <div>
-                    <dt className="text-fg-muted">{t.duration}</dt>
-                    <dd className="font-semibold">{step.duration[locale]}</dd>
-                  </div>
                   <div>
                     <dt className="text-fg-muted">{t.deliverable}</dt>
                     <dd className="font-semibold">{step.deliverable[locale]}</dd>

@@ -75,7 +75,7 @@ export function ProjectCard({
               href={project.demoUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="relative z-10 inline-flex items-center gap-1 rounded-full bg-chalk-yellow/20 px-3 py-1 text-xs font-semibold text-brand-900 hover:bg-chalk-yellow/35 dark:text-chalk-yellow"
+              className="relative z-10 inline-flex items-center gap-1 rounded-full bg-highlight/20 px-3 py-1 text-xs font-semibold text-brand-900 hover:bg-highlight/35 dark:text-highlight"
             >
               {labels.liveDemo}
               <IconExternal className="size-3.5" />

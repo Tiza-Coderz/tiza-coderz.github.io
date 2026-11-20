@@ -51,7 +51,7 @@ export default async function ServicesPage({ params }: PageProps<"/[lang]/servic
               <ol className="space-y-3">
                 {t.payments.schedule.map((step, i) => (
                   <li key={step} className="flex items-center gap-3">
-                    <span className="grid size-7 shrink-0 place-items-center rounded-full bg-chalk-yellow text-sm font-bold text-brand-950">
+                    <span className="grid size-7 shrink-0 place-items-center rounded-full bg-highlight text-sm font-bold text-brand-950">
                       {i + 1}
                     </span>
                     {step}
@@ -79,7 +79,7 @@ export default async function ServicesPage({ params }: PageProps<"/[lang]/servic
         </div>
       </Section>
 
-      <CtaBand locale={locale} dict={dict} />
+      <CtaBand dict={dict} />
     </>
   );
 }
