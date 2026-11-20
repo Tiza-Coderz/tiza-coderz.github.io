@@ -41,7 +41,7 @@ export default async function ProjectsPage({ params }: PageProps<"/[lang]/proyec
           }}
         />
       </Section>
-      <CtaBand locale={locale} dict={dict} />
+      <CtaBand dict={dict} />
     </>
   );
 }

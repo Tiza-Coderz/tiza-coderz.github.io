@@ -49,7 +49,7 @@ export default async function ContactPage({ params }: PageProps<"/[lang]/contact
       label: t.channels.location,
       value: `${company.city}, Cuba`,
       hint: t.channels.locationHint,
-      tone: "bg-chalk-yellow text-brand-950",
+      tone: "bg-highlight text-brand-950",
     },
     {
       icon: IconClock,

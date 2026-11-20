@@ -2,23 +2,15 @@ import { company } from "@data/company";
 import { ButtonExternal, buttonClasses } from "@/components/ui/Button";
 import { IconMail, IconWhatsApp } from "@/components/ui/Icons";
 import { Container } from "@/components/ui/Layout";
-import type { Dictionary, Locale } from "@/i18n";
+import type { Dictionary } from "@/i18n";
 import { whatsappLink } from "@/lib/site";
 
-/** Llamada final a la acción, en fondo de pizarra. Se repite al pie de cada página. */
-export function CtaBand({
-  locale,
-  dict,
-  message,
-}: {
-  locale: Locale;
-  dict: Dictionary;
-  message?: string;
-}) {
+/** Llamada final a la acción, en el panel de marca. Se repite al pie de cada página. */
+export function CtaBand({ dict, message }: { dict: Dictionary; message?: string }) {
   return (
     <section aria-labelledby="cta-titulo" className="py-16 sm:py-20">
       <Container>
-        <div className="relative reveal overflow-hidden rounded-[2rem] bg-chalkboard px-6 py-12 text-center text-white sm:px-12 sm:py-16">
+        <div className="relative reveal overflow-hidden rounded-[2rem] bg-brand-panel px-6 py-12 text-center text-white sm:px-12 sm:py-16">
           <h2
             id="cta-titulo"
             className="text-3xl font-bold tracking-tight text-balance sm:text-4xl"
@@ -46,7 +38,6 @@ export function CtaBand({
               {dict.ctaBand.email}
             </a>
           </div>
-          <p className="mt-8 font-chalk text-2xl text-chalk-yellow">{company.slogan[locale]}</p>
         </div>
       </Container>
     </section>
