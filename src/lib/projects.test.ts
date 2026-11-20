@@ -1,4 +1,4 @@
-import { existsSync } from "node:fs";
+import { existsSync, statSync } from "node:fs";
 import path from "node:path";
 import { describe, expect, it } from "vitest";
 import { services } from "@data/services";
@@ -172,6 +172,16 @@ describe("contenido real (content/projects)", () => {
     expect(prev?.slug).toBe(all.at(-1)?.slug);
     expect(next?.slug).toBe(all[1]?.slug);
     expect(getAdjacentProjects("no-existe", "es")).toEqual({ prev: undefined, next: undefined });
+  });
+
+  it.each(slugs)("%s: portada, capturas e imagen OG existen y son ligeras (< 150 KB)", (slug) => {
+    const p = getProject(slug, "es")!;
+    const files = [p.cover, ...p.screenshots.map((s) => s.src), `/og/${slug}.jpg`];
+    for (const src of files) {
+      const file = path.join(process.cwd(), "public", src);
+      expect(existsSync(file), src).toBe(true);
+      expect(statSync(file).size, src).toBeLessThan(150 * 1024);
+    }
   });
 
   it("devuelve undefined para un slug inexistente", () => {
