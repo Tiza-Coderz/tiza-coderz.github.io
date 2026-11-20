@@ -88,7 +88,7 @@ export function Footer({ locale, dict }: { locale: Locale; dict: Dictionary }) {
           <p>
             © {year} {company.name}. {dict.footer.rights}
           </p>
-          <p>{dict.footer.madeIn} 🇨🇺</p>
+          <p>{dict.footer.madeIn}</p>
         </Container>
       </div>
     </footer>
