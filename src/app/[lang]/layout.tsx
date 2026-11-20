@@ -5,7 +5,7 @@ import { Header } from "@/components/layout/Header";
 import { ThemeScript } from "@/components/layout/ThemeToggle";
 import { WhatsAppFab } from "@/components/layout/WhatsAppFab";
 import { getDictionary, localeTags, locales, ogLocales, resolveLocale } from "@/i18n";
-import { absoluteUrl, basePath, siteUrl } from "@/lib/site";
+import { absoluteUrl, basePath, isPreviewDeployment, siteUrl } from "@/lib/site";
 import { jsonLdScript, professionalServiceJsonLd } from "@/lib/structured-data";
 import { fontVariables } from "../fonts";
 import "../globals.css";
@@ -50,6 +50,7 @@ export async function generateMetadata({ params }: LayoutProps<"/[lang]">): Prom
     },
     twitter: { card: "summary_large_image" },
     formatDetection: { telephone: false },
+    ...(isPreviewDeployment() ? { robots: { index: false, follow: false } } : {}),
   };
 }
 
