@@ -1,0 +1,56 @@
+---
+title: CajaFácil
+client: "La Esquina mini-market, Playa (sample business)"
+kind: producto
+sector: comercio
+summary: Point of sale, inventory and cash register for Cuban small businesses. Sells in USD and CUP, balances the drawer by currency and works offline.
+problem: CUP prices recalculated by hand every time the rate moves, wrong change on mixed payments and cash closings that never balance.
+solution: A point-of-sale app for Android and web that converts prices at today's rate, takes payments in several currencies and methods, and closes the drawer bill by bill.
+result: The owner knows how much was sold, how much was earned and how much should be in the drawer for each currency, even during blackouts or without data.
+stack: [Flutter, Dart, Riverpod, Drift (SQLite), Supabase, GitHub Actions]
+platforms: [android, web]
+year: 2026
+demoUrl: https://tiza-coderz.github.io/cajafacil/
+repoUrl: https://github.com/Tiza-Coderz/cajafacil
+demoCredentials: { user: "PIN 1234 (owner) · admin@demo.cu", password: "demo1234" }
+cover: /images/projects/cajafacil/cover.webp
+screenshots:
+  - { src: /images/projects/cajafacil/pos.webp, alt: "Point of sale with search and cart on mobile", device: mobile }
+  - { src: /images/projects/cajafacil/cobro.webp, alt: "Mixed USD and CUP payment with change calculation", device: mobile }
+  - { src: /images/projects/cajafacil/caja.webp, alt: "Cash closing counting bill by bill", device: mobile }
+  - { src: /images/projects/cajafacil/reportes.webp, alt: "Sales and profit reports", device: mobile }
+  - { src: /images/projects/cajafacil/pos-escritorio.webp, alt: "Point of sale on a wide screen", device: desktop }
+highlights:
+  - { value: "100% offline", label: "Sells without internet; syncs when the signal returns" }
+  - { value: "USD + CUP", label: "Mixed payments and change in the customer's currency" }
+  - { value: "3 roles", label: "Owner, manager and cashier with different permissions" }
+featured: true
+order: 1
+---
+
+## The problem
+
+A corner store or mini-market in Cuba sells in **two currencies at once**, with an exchange rate that changes almost daily, takes cash, Transfermóvil, EnZona or bank transfers, and is often **offline**. The usual tools are a notebook and a calculator:
+
+- CUP prices are recalculated by hand every time the rate goes up.
+- Change on mixed payments (dollars + pesos) is worked out mentally and money is lost.
+- At closing time nobody knows how much should be in the drawer for each currency.
+- Nobody knows which products are profitable or when to restock.
+
+## The solution
+
+**CajaFácil** runs on the phone or computer the business already owns:
+
+- **Daily exchange rate with history**: every CUP price updates automatically, with a warning on sudden changes.
+- **Point of sale** with search, barcode scanning (camera or USB), bulk sales and discounts.
+- **Mixed payments** in USD/CUP cash, transfer, Transfermóvil or EnZona, with **change in the currency the customer asks for**. 80 mm PDF receipt or via WhatsApp.
+- **Cash register** with opening float, cash in/out and **closing counted bill by bill** (including the 3 CUP note), with the difference per currency.
+- **Inventory** with average cost, shrinkage and a stock ledger per product.
+- **Reports** on sales, profit and margin, exportable to PDF and Excel.
+- **PIN access** with roles: cashiers can't see profits.
+
+## The result
+
+A system that installs in minutes, **doesn't depend on the internet** and gives the owner what a notebook can't: a drawer balanced by currency, real profit and a restocking list. With several registers, they sync when online without losing a single sale.
+
+> Try the demo with **PIN 1234** (owner), **2222** (manager) or **3333** (cashier). Data lives in your browser and you can reset it anytime.

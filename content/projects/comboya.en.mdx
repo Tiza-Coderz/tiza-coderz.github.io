@@ -1,0 +1,55 @@
+---
+title: ComboYa
+client: "Grocery-bundle shop in Havana (sample business)"
+kind: producto
+sector: ecommerce
+summary: Online store selling food, household and drink bundles to Cubans abroad, delivered to their families in Havana.
+problem: Orders over WhatsApp with price lists as images, the same quotes repeated all day, wrongly noted addresses and customers asking "has it arrived yet?".
+solution: An online catalog with prices in USD, EUR and CUP, delivery cost by municipality, a two-step checkout and a tracking code for every order, plus a full admin panel.
+result: The business keeps working through WhatsApp, but with pre-written messages, complete buyer and recipient details and every order organized in one panel.
+stack: [Next.js 15, TypeScript, Tailwind CSS, Supabase, Zod, Vercel]
+platforms: [web, pwa]
+year: 2026
+demoUrl: https://combo-ya.vercel.app
+repoUrl: https://github.com/Tiza-Coderz/ComboYa
+demoCredentials: { user: "admin@demo.cu", password: "demo1234" }
+cover: /images/projects/comboya/cover.webp
+screenshots:
+  - { src: /images/projects/comboya/movil-inicio.webp, alt: "Store home on mobile with featured bundles", device: mobile }
+  - { src: /images/projects/comboya/movil-ficha-combo.webp, alt: "Bundle page showing the savings versus buying separately", device: mobile }
+  - { src: /images/projects/comboya/movil-checkout.webp, alt: "Checkout with recipient details and municipality", device: mobile }
+  - { src: /images/projects/comboya/escritorio-inicio.webp, alt: "Store home on desktop", device: desktop }
+  - { src: /images/projects/comboya/admin-dashboard.webp, alt: "Dashboard with sales, pending orders and best sellers", device: desktop }
+  - { src: /images/projects/comboya/escritorio-seguimiento.webp, alt: "Public order tracking with a timeline", device: desktop }
+highlights:
+  - { value: "~145 kB", label: "of initial JavaScript: loads fast on mobile data" }
+  - { value: "USD · EUR · CUP", label: "Prices at today's rate, edited from the panel" }
+  - { value: "CY-1234", label: "Tracking code for every order" }
+featured: true
+order: 2
+---
+
+## The problem
+
+Thousands of Cubans in Miami, Madrid or Mexico City buy groceries for their families in Cuba. Today they do it over WhatsApp, with price lists sent as images, without knowing the delivery cost or the status of their order. For the business that means:
+
+- Hours answering messages to quote the same bundle again and again.
+- Mistakes in addresses, phone numbers and payments, because details arrive scattered in a chat.
+- Anxious customers asking "has it arrived?" because they have nowhere to check.
+
+## The solution
+
+**ComboYa** puts the catalog online and organizes the whole process:
+
+- **Catalog** with Spanish-aware search, filters and product pages that show **how much each bundle saves**.
+- **Prices in USD** with a USD/EUR selector and the **CUP** equivalent at today's rate.
+- **Two-step checkout**: buyer details and recipient in Cuba, with **delivery cost by municipality**.
+- On confirmation, the **business's WhatsApp opens with the order summary** and the customer gets a **tracking link** (`/seguimiento/CY-1234`).
+- **Admin panel**: orders with status changes, payments, printable delivery sheet, products and bundles, delivery zones, rates and reports.
+- **Installable PWA** with an offline page, and images compressed to WebP in the browser (a 4 MB photo becomes about 60 KB).
+
+## The result
+
+A store that **works while the owner sleeps**: customers abroad see clear prices, know the delivery cost and track their order without writing. The business receives complete orders with correct addresses and phone numbers, and sees in one panel how much it sold, what it is owed and which bundles perform best.
+
+> Open the panel at `/admin/login` with **admin@demo.cu / demo1234**. The "Reset demo" button restores the sample data.

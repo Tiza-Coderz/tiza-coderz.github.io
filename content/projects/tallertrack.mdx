@@ -1,0 +1,58 @@
+---
+title: TallerTrack
+client: "TecnoFix, reparación de celulares, Cerro (negocio de ejemplo)"
+kind: producto
+sector: servicios
+summary: Órdenes de servicio para talleres de reparación. Recepción con ticket y QR, seguimiento público del estado, avisos por WhatsApp, inventario de piezas y garantía.
+problem: Órdenes apuntadas en una libreta, clientes llamando todo el día para saber si su teléfono está listo, piezas que «desaparecen» y garantías discutidas.
+solution: Un sistema web ligero que registra cada equipo con su estado físico y fotos, imprime un ticket con QR para que el cliente consulte el estado y descuenta las piezas usadas del inventario.
+result: Menos llamadas, constancia de cómo llegó cada equipo, control de piezas y reportes de ganancia por pieza y por técnico, en USD y CUP.
+stack: [Next.js 16, TypeScript, Tailwind CSS, Supabase, Zod, Vercel]
+platforms: [web, pwa]
+year: 2026
+demoUrl: https://tallertrack-five.vercel.app
+repoUrl: https://github.com/Tiza-Coderz/tallertrack
+demoCredentials: { user: "admin@demo.cu", password: "demo1234" }
+cover: /images/projects/tallertrack/cover.webp
+screenshots:
+  - { src: /images/projects/tallertrack/estado-publico.webp, alt: "Seguimiento público del estado de la reparación en el móvil", device: mobile }
+  - { src: /images/projects/tallertrack/login.webp, alt: "Acceso al sistema con las credenciales demo", device: mobile }
+  - { src: /images/projects/tallertrack/tablero.webp, alt: "Tablero de órdenes por estado", device: desktop }
+  - { src: /images/projects/tallertrack/detalle-orden.webp, alt: "Detalle de una orden con historial y aviso por WhatsApp", device: desktop }
+  - { src: /images/projects/tallertrack/reportes.webp, alt: "Reportes de ingresos y rendimiento por técnico", device: desktop }
+highlights:
+  - { value: "Ticket 80 mm + QR", label: "El cliente consulta el estado sin llamar" }
+  - { value: "9 estados", label: "De «Recibido» a «Entregado», con notas internas y para el cliente" }
+  - { value: "Garantía por IMEI", label: "Reapertura sin cobrar mano de obra" }
+featured: true
+order: 4
+---
+
+## El problema
+
+En un taller típico de La Habana, las órdenes se apuntan en una libreta o en un grupo de WhatsApp. Eso provoca problemas que cuestan dinero y clientes:
+
+- **«¿Ya está mi teléfono?»**: el dueño contesta las mismas preguntas todo el día.
+- **Reclamaciones** por rayones o accesorios porque no quedó constancia de cómo llegó el equipo.
+- **Piezas que desaparecen**: no se sabe cuántas pantallas quedan ni en qué equipo se usaron.
+- **Garantías discutidas**: no hay forma rápida de saber cuándo y quién reparó un IMEI.
+- **Precios confusos** cuando la tasa del USD cambia cada semana.
+
+## La solución
+
+**TallerTrack** es una app web que funciona en el móvil del técnico con datos lentos y se instala como app:
+
+- **Recepción del equipo**: cliente, IMEI, falla, estado físico, accesorios, fotos, contraseña o patrón (cifrado), presupuesto en USD con su equivalente en CUP y fecha prometida.
+- **Ticket en PDF** de 80 mm (impresora térmica) o A4, con **QR al seguimiento**.
+- **Flujo de estados** de «Recibido» a «Entregado», con historial, notas internas y notas visibles para el cliente.
+- **Aviso por WhatsApp** con el mensaje ya redactado según el estado y el total en USD y CUP.
+- **Seguimiento público** sin iniciar sesión y sin datos sensibles.
+- **Inventario de piezas** con descuento automático al usarlas, alertas de stock bajo y movimientos.
+- **Garantía** con búsqueda por IMEI y reapertura de la orden.
+- **Reportes** de órdenes, ingresos por mes, ganancia por pieza y rendimiento por técnico.
+
+## El resultado
+
+El taller **deja de vivir pegado al teléfono**: el cliente escanea el QR de su ticket y ve en qué va su reparación. Cada equipo queda documentado desde que entra, cada pieza sabe dónde se usó y el dueño ve qué le deja dinero. Las reglas importantes (cambios de estado, stock, garantía) se aplican en la base de datos, así que no dependen de que alguien «se acuerde».
+
+> Entre con **admin@demo.cu / demo1234**. La demo trae 4 técnicos, 50 órdenes y 30 piezas reales, y se puede restablecer desde el login.
