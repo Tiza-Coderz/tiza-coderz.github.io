@@ -15,6 +15,7 @@ import { renderMdx } from "@/lib/mdx";
 import { getAdjacentProjects, getProject, getProjectSlugs } from "@/lib/projects";
 import { pageMetadata } from "@/lib/seo";
 import { asset, href, whatsappLink } from "@/lib/site";
+import { jsonLdScript, projectJsonLd } from "@/lib/structured-data";
 import { fillTemplate } from "@/lib/whatsapp";
 
 export const dynamicParams = false;
@@ -66,6 +67,10 @@ export default async function CaseStudyPage({ params }: Props) {
 
   return (
     <article>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: jsonLdScript(projectJsonLd(project, locale)) }}
+      />
       {/* Cabecera */}
       <header className="border-b border-line bg-bg-soft">
         <Container className="grid gap-10 py-12 sm:py-16 lg:grid-cols-[1fr_1.1fr] lg:items-center">

@@ -17,7 +17,8 @@
     "shots": "tsx scripts/preview-shots.ts",
     "img": "tsx scripts/optimize-image.ts",
     "capture": "tsx scripts/capture-demo.ts",
-    "marketing": "tsx scripts/generate-marketing.ts"
+    "marketing": "tsx scripts/generate-marketing.ts",
+    "icons": "tsx scripts/generate-icons.ts"
   },
   "dependencies": {
     "@mdx-js/mdx": "^3.1.1",

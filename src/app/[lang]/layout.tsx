@@ -5,7 +5,8 @@ import { Header } from "@/components/layout/Header";
 import { ThemeScript } from "@/components/layout/ThemeToggle";
 import { WhatsAppFab } from "@/components/layout/WhatsAppFab";
 import { getDictionary, localeTags, locales, ogLocales, resolveLocale } from "@/i18n";
-import { absoluteUrl, siteUrl } from "@/lib/site";
+import { absoluteUrl, basePath, siteUrl } from "@/lib/site";
+import { jsonLdScript, professionalServiceJsonLd } from "@/lib/structured-data";
 import { fontVariables } from "../fonts";
 import "../globals.css";
 
@@ -64,6 +65,12 @@ export default async function LangLayout({ children, params }: LayoutProps<"/[la
     >
       <head>
         <ThemeScript />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: jsonLdScript(professionalServiceJsonLd(locale, dict)),
+          }}
+        />
       </head>
       <body className="flex min-h-dvh flex-col">
         <a
@@ -78,6 +85,12 @@ export default async function LangLayout({ children, params }: LayoutProps<"/[la
         </main>
         <Footer locale={locale} dict={dict} />
         <WhatsAppFab message={dict.whatsapp.defaultMessage} label={dict.a11y.whatsappFab} />
+        {/* PWA: registra el service worker solo en producción (no en localhost). */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `if("serviceWorker"in navigator&&!/^(localhost|127\.)/.test(location.hostname)){addEventListener("load",function(){navigator.serviceWorker.register("${basePath}/sw.js",{scope:"${basePath}/"})})}`,
+          }}
+        />
       </body>
     </html>
   );
