@@ -232,6 +232,144 @@ export const es = {
       screenshotAlt: "Captura de {project}",
     },
   },
+  processPage: {
+    pageTitle: "Cómo trabajamos",
+    pageDescription:
+      "Nuestro proceso en 5 pasos: conversación gratis, propuesta con precio cerrado, diseño, desarrollo con demos semanales y entrega con mantenimiento.",
+    commitments: {
+      title: "Nuestros compromisos",
+      items: [
+        "Precio cerrado por escrito antes de empezar.",
+        "Una demo nueva cada semana, en su teléfono.",
+        "Usted es dueño del código y de los datos.",
+        "Le enseñamos a usarlo a usted y a su equipo.",
+        "Respuesta por WhatsApp en horario laboral.",
+        "Primer mes de mantenimiento incluido.",
+      ],
+    },
+  },
+  about: {
+    pageTitle: "Nosotros",
+    pageDescription:
+      "Tiza Coderz es un estudio de desarrollo en La Habana que hace apps, webs y sistemas para mipymes cubanas. Conozca al equipo y cómo pensamos.",
+    eyebrow: "Nosotros",
+    title: "Un estudio de La Habana que entiende cómo funciona su negocio",
+    intro:
+      "Tiza Coderz nació para resolver los problemas reales de las mipymes cubanas: dos monedas, una tasa que cambia cada semana, apagones, datos caros y clientes que escriben por WhatsApp. No vendemos tecnología: vendemos que su negocio funcione mejor.",
+    nameStory: {
+      title: "¿Por qué «Tiza»?",
+      text: "Porque así empieza cada proyecto: usted nos explica su idea como si la dibujara en una pizarra, y nosotros la convertimos en software que funciona. Del boceto en tiza al sistema que vende.",
+      spelling: "Se escribe Tiza Coderz, con zeta al final.",
+    },
+    mission: {
+      title: "Nuestra misión",
+      text: "Que cualquier mipyme cubana pueda tener el mismo software que una empresa grande, a un precio que tenga sentido para su negocio y hecho por gente que conoce su realidad.",
+    },
+    values: {
+      title: "Cómo trabajamos",
+      items: [
+        {
+          title: "Claridad",
+          text: "Precios cerrados, plazos realistas y avances que usted puede ver cada semana.",
+        },
+        {
+          title: "Hecho para Cuba",
+          text: "Multimoneda, modo sin conexión, WhatsApp y páginas que cargan con datos lentos.",
+        },
+        {
+          title: "Calidad de equipo grande",
+          text: "Código revisado, pruebas automáticas y despliegues seguros, como en una empresa de software.",
+        },
+        {
+          title: "Relación a largo plazo",
+          text: "No desaparecemos después de entregar: mantenemos, mejoramos y crecemos con usted.",
+        },
+      ],
+    },
+    team: {
+      title: "El equipo",
+      intro:
+        "Un núcleo técnico con experiencia en productos en producción y una red de colaboradores de diseño y desarrollo que sumamos según el tamaño de cada proyecto.",
+      founderBio:
+        "Ingeniero Informático graduado de la CUJAE (2026). Más de 3 años construyendo productos digitales en producción: apps móviles con Flutter, sistemas web con React y Next.js, APIs con NestJS y FastAPI, e integración de inteligencia artificial en productos reales. Ha trabajado en equipos remotos para clientes de Cuba, Venezuela y España.",
+      skills: [
+        "Flutter",
+        "React / Next.js",
+        "Node.js / NestJS",
+        "FastAPI",
+        "PostgreSQL / Supabase",
+        "IA aplicada",
+      ],
+      cv: "Ver currículum (PDF)",
+      github: "GitHub",
+      collaborators: "Colaboradores",
+      collaboratorsText:
+        "Diseño gráfico, UX y desarrollo adicional cuando el proyecto lo necesita, siempre bajo la misma dirección técnica y el mismo estándar de calidad.",
+    },
+  },
+  contact: {
+    pageTitle: "Contacto",
+    pageDescription:
+      "Hable con Tiza Coderz por WhatsApp o correo. La primera conversación es gratis: cuéntenos su idea y le damos precio y plazo.",
+    eyebrow: "Contacto",
+    title: "Cuéntenos su idea",
+    intro:
+      "La primera conversación es gratis y sin compromiso. La forma más rápida es WhatsApp; si lo prefiere, rellene el formulario y le respondemos en menos de 24 horas laborables.",
+    channels: {
+      whatsapp: "WhatsApp",
+      whatsappHint: "La forma más rápida",
+      email: "Correo",
+      emailHint: "Para propuestas y documentos",
+      location: "Ubicación",
+      locationHint: "Reuniones presenciales en La Habana",
+      hours: "Horario",
+    },
+    form: {
+      title: "Escríbanos",
+      name: "Su nombre",
+      contact: "Teléfono o correo",
+      contactHint: "Para responderle. Ej.: +53 5xxxxxxx o nombre@correo.cu",
+      business: "Nombre del negocio (opcional)",
+      projectType: "¿Qué necesita?",
+      projectTypes: {
+        presencia: "Una web para mi negocio",
+        "catalogo-menu-qr": "Catálogo o menú QR",
+        "tienda-online": "Tienda online",
+        "sistema-de-gestion": "Sistema de gestión (caja, inventario…)",
+        "app-movil": "App móvil",
+        "automatizacion-ia": "Automatización con IA",
+        otro: "Otra cosa / no estoy seguro",
+      },
+      message: "Cuéntenos qué necesita",
+      messagePlaceholder:
+        "Ej.: Tengo una cafetería en el Vedado y quiero que los clientes vean el menú con precios en USD y CUP…",
+      honeypot: "No rellene este campo",
+      submit: "Enviar mensaje",
+      sending: "Enviando…",
+      sendWhatsapp: "Enviar por WhatsApp",
+      sendEmail: "Abrir en mi correo",
+      success: "¡Mensaje enviado! Le responderemos en menos de 24 horas laborables.",
+      errorNetwork:
+        "No se pudo enviar: parece que no hay conexión. Pruebe de nuevo o envíelo por WhatsApp.",
+      errorServer:
+        "El servicio de formularios no respondió. Envíenos el mensaje por WhatsApp o correo.",
+      noFormspree: "Elija cómo enviarlo: se abrirá WhatsApp o su correo con el mensaje ya escrito.",
+      errors: {
+        nameRequired: "Escriba su nombre.",
+        contactRequired: "Indique un teléfono o un correo para responderle.",
+        contactInvalid: "Revise el teléfono o el correo.",
+        messageShort: "Cuéntenos un poco más (al menos 10 caracteres).",
+      },
+      messageLabels: {
+        greeting: "Hola, Tiza Coderz. Les escribo desde la web.",
+        name: "Nombre",
+        contact: "Contacto",
+        business: "Negocio",
+        projectType: "Necesito",
+      },
+      emailSubject: "Consulta desde la web",
+    },
+  },
   ctaBand: {
     title: "¿Hablamos de su negocio?",
     text: "La primera conversación es gratis y sin compromiso. Cuéntenos qué le quita tiempo o dinero y le decimos cómo lo resolveríamos, cuánto costaría y en cuánto tiempo.",

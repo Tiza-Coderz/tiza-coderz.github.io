@@ -221,6 +221,145 @@ export const en: Dictionary = {
       screenshotAlt: "Screenshot of {project}",
     },
   },
+  processPage: {
+    pageTitle: "How we work",
+    pageDescription:
+      "Our 5-step process: free conversation, fixed-price proposal, design, development with weekly demos, and launch with maintenance.",
+    commitments: {
+      title: "Our commitments",
+      items: [
+        "A fixed price in writing before we start.",
+        "A new demo every week, on your phone.",
+        "You own the code and the data.",
+        "We train you and your team.",
+        "WhatsApp replies during business hours.",
+        "First month of maintenance included.",
+      ],
+    },
+  },
+  about: {
+    pageTitle: "About us",
+    pageDescription:
+      "Tiza Coderz is a software studio in Havana building apps, websites and systems for Cuban small businesses. Meet the team and how we think.",
+    eyebrow: "About us",
+    title: "A Havana studio that understands how your business works",
+    intro:
+      "Tiza Coderz was born to solve the real problems of Cuban small businesses: two currencies, a rate that changes every week, blackouts, expensive data and customers who write on WhatsApp. We don't sell technology: we make your business run better.",
+    nameStory: {
+      title: 'Why "Tiza" (chalk)?',
+      text: "Because that's how every project starts: you explain your idea as if you were drawing it on a chalkboard, and we turn it into software that works. From a chalk sketch to a system that sells.",
+      spelling: "It's spelled Tiza Coderz, with a z at the end.",
+    },
+    mission: {
+      title: "Our mission",
+      text: "To give any Cuban small business the same software a large company has, at a price that makes sense for the business, built by people who know its reality.",
+    },
+    values: {
+      title: "How we work",
+      items: [
+        {
+          title: "Clarity",
+          text: "Fixed prices, realistic timelines and progress you can see every week.",
+        },
+        {
+          title: "Built for Cuba",
+          text: "Multi-currency, offline mode, WhatsApp and pages that load on slow data.",
+        },
+        {
+          title: "Big-team quality",
+          text: "Code review, automated tests and safe deployments, like a software company.",
+        },
+        {
+          title: "Long-term relationship",
+          text: "We don't disappear after launch: we maintain, improve and grow with you.",
+        },
+      ],
+    },
+    team: {
+      title: "The team",
+      intro:
+        "A technical core with experience shipping products to production, plus a network of design and development collaborators we bring in depending on the size of each project.",
+      founderBio:
+        "Computer Engineer from CUJAE (2026). Over 3 years building digital products in production: Flutter mobile apps, web systems with React and Next.js, APIs with NestJS and FastAPI, and AI integration in real products. Has worked in remote teams for clients in Cuba, Venezuela and Spain.",
+      skills: [
+        "Flutter",
+        "React / Next.js",
+        "Node.js / NestJS",
+        "FastAPI",
+        "PostgreSQL / Supabase",
+        "Applied AI",
+      ],
+      cv: "View résumé (PDF)",
+      github: "GitHub",
+      collaborators: "Collaborators",
+      collaboratorsText:
+        "Graphic design, UX and extra development when the project needs it, always under the same technical lead and the same quality standard.",
+    },
+  },
+  contact: {
+    pageTitle: "Contact",
+    pageDescription:
+      "Talk to Tiza Coderz on WhatsApp or by email. The first conversation is free: tell us your idea and we'll give you a price and a timeline.",
+    eyebrow: "Contact",
+    title: "Tell us your idea",
+    intro:
+      "The first conversation is free and with no commitment. WhatsApp is the fastest way; or fill in the form and we'll reply within 24 business hours.",
+    channels: {
+      whatsapp: "WhatsApp",
+      whatsappHint: "The fastest way",
+      email: "Email",
+      emailHint: "For proposals and documents",
+      location: "Location",
+      locationHint: "In-person meetings in Havana",
+      hours: "Hours",
+    },
+    form: {
+      title: "Write to us",
+      name: "Your name",
+      contact: "Phone or email",
+      contactHint: "So we can reply. E.g.: +53 5xxxxxxx or name@email.com",
+      business: "Business name (optional)",
+      projectType: "What do you need?",
+      projectTypes: {
+        presencia: "A website for my business",
+        "catalogo-menu-qr": "Catalog or QR menu",
+        "tienda-online": "Online store",
+        "sistema-de-gestion": "Management system (POS, inventory…)",
+        "app-movil": "Mobile app",
+        "automatizacion-ia": "AI automation",
+        otro: "Something else / not sure",
+      },
+      message: "Tell us what you need",
+      messagePlaceholder:
+        "E.g.: I have a café in Vedado and I want customers to see the menu with prices in USD and CUP…",
+      honeypot: "Leave this field empty",
+      submit: "Send message",
+      sending: "Sending…",
+      sendWhatsapp: "Send via WhatsApp",
+      sendEmail: "Open in my email",
+      success: "Message sent! We'll reply within 24 business hours.",
+      errorNetwork:
+        "It couldn't be sent: you seem to be offline. Try again or send it via WhatsApp.",
+      errorServer:
+        "The form service didn't respond. Please send us the message via WhatsApp or email.",
+      noFormspree:
+        "Choose how to send it: WhatsApp or your email will open with the message already written.",
+      errors: {
+        nameRequired: "Please enter your name.",
+        contactRequired: "Please give us a phone number or email to reply.",
+        contactInvalid: "Please check the phone number or email.",
+        messageShort: "Tell us a bit more (at least 10 characters).",
+      },
+      messageLabels: {
+        greeting: "Hi Tiza Coderz, I'm writing from your website.",
+        name: "Name",
+        contact: "Contact",
+        business: "Business",
+        projectType: "I need",
+      },
+      emailSubject: "Inquiry from the website",
+    },
+  },
   ctaBand: {
     title: "Shall we talk about your business?",
     text: "The first conversation is free and with no commitment. Tell us what is costing you time or money and we'll tell you how we would solve it, how much it would cost and how long it would take.",
