@@ -39,6 +39,90 @@ export const en: Dictionary = {
     defaultMessage:
       "Hi Tiza Coderz, I saw your website and I'd like to talk about a project for my business.",
   },
+  home: {
+    hero: {
+      eyebrow: "Made in Cuba, for Cuba",
+      titleStart: "Custom apps and systems that help your small business",
+      titleHighlight: "sell more",
+      subtitle:
+        "Control your inventory and your cash register, stop losing orders and get paid in USD and CUP. Everything we build works even on a poor connection.",
+      ctaWhatsapp: "Message us on WhatsApp",
+      ctaProjects: "See projects",
+      trust: ["Prices in USD and CUP", "Works on slow data or offline", "Weekly demos"],
+      visualAlt:
+        "Three apps built by Tiza Coderz on a phone: point of sale, online store and financial dashboard",
+    },
+    stats: [
+      { value: "3+ years", label: "building digital products in production" },
+      { value: "10+", label: "projects delivered to clients" },
+      { value: "3 countries", label: "clients in Cuba, Venezuela and Spain" },
+      { value: "4 demos", label: "public, ready for you to try today" },
+    ],
+    why: {
+      eyebrow: "Why Tiza Coderz",
+      title: "Software designed for how business works in Cuba",
+      items: [
+        {
+          title: "Two currencies, a moving rate",
+          text: "Base prices in USD, CUP equivalent at today's rate and cash closing per currency. No manual recalculation.",
+        },
+        {
+          title: "Offline? No problem",
+          text: "Apps that keep selling during blackouts or without data, and sync when the signal returns.",
+        },
+        {
+          title: "WhatsApp at the center",
+          text: "Orders, notifications and reminders arrive on WhatsApp already written, because that's where your customers are.",
+        },
+        {
+          title: "You see progress every week",
+          text: "Weekly demos on your phone, a fixed price in writing and payments by milestone.",
+        },
+      ],
+    },
+    process: {
+      eyebrow: "How we work",
+      title: "From the idea on the chalkboard to a working system",
+      intro: "A clear 5-step process, so you always know what's being done and how much is left.",
+      duration: "Duration",
+      deliverable: "You get",
+      seeMore: "See the full process",
+    },
+    testimonials: {
+      eyebrow: "What our clients say",
+      title: "Businesses already working with us",
+    },
+    faq: {
+      eyebrow: "FAQ",
+      title: "What people ask us before starting",
+      items: [
+        {
+          q: "How much does an app or website cost?",
+          a: "It depends on what you need, but every package has a starting price: a presence website from 150 USD, an online store from 500 USD and a management system from 900 USD. In the first conversation we give you a fixed price in writing.",
+        },
+        {
+          q: "Can I pay in CUP?",
+          a: "Yes. Prices are set in USD and, if you prefer to pay in CUP, we use the rate on the invoice date. We also accept USD cash, bank transfers and payments from abroad.",
+        },
+        {
+          q: "Does it work during blackouts or without data?",
+          a: "Our management apps are built for that: they store everything on the device and sync when the connection returns. Websites are optimized to load fast on mobile data.",
+        },
+        {
+          q: "How long does it take?",
+          a: "A presence website, 3 to 7 days. An online store, 2 to 4 weeks. A management system, 3 to 8 weeks. We show you the progress every week.",
+        },
+        {
+          q: "What happens after launch?",
+          a: "We train you and take care of hosting, backups and minor changes with the maintenance plan. The first month is included.",
+        },
+        {
+          q: "Do I own the system?",
+          a: "Yes. Once fully paid, the code and the data are yours. If you ever want to move to another team, we hand everything over.",
+        },
+      ],
+    },
+  },
   services: {
     eyebrow: "What we do",
     title: "Clear-priced packages, no surprises",
