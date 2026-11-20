@@ -1,36 +1,208 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+<div align="center">
 
-## Getting Started
+<img src="src/app/icon.svg" width="72" alt="Logo de Tiza Coderz">
 
-First, run the development server:
+# Tiza Coderz · Web corporativa
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+**Apps, webs y sistemas a la medida para mipymes cubanas.**
+_Del boceto en tiza al software que vende._
+
+[![CI](https://github.com/Tiza-Coderz/tiza-coderz.github.io/actions/workflows/ci.yml/badge.svg?branch=develop)](https://github.com/Tiza-Coderz/tiza-coderz.github.io/actions/workflows/ci.yml)
+[![Deploy](https://github.com/Tiza-Coderz/tiza-coderz.github.io/actions/workflows/deploy.yml/badge.svg)](https://github.com/Tiza-Coderz/tiza-coderz.github.io/actions/workflows/deploy.yml)
+![Next.js](https://img.shields.io/badge/Next.js-16-000?logo=nextdotjs)
+![TypeScript](https://img.shields.io/badge/TypeScript-estricto-3178c6?logo=typescript&logoColor=white)
+![Tailwind](https://img.shields.io/badge/Tailwind-4-0f4c75?logo=tailwindcss&logoColor=white)
+
+**[▶ Ver la web en vivo](https://tiza-coderz.github.io/)** · [English summary](#english-summary)
+
+</div>
+
+---
+
+## El problema de negocio
+
+Un dueño de mipyme en Cuba que busca quien le haga una app o un sistema no compra tecnología: compra **confianza**. Necesita ver que el equipo entiende su realidad (dos monedas, tasa que cambia cada semana, apagones, datos caros, clientes por WhatsApp) y que ya ha resuelto problemas parecidos.
+
+Esta web es la **oficina en línea del estudio Tiza Coderz**. Su trabajo es convertir visitas en conversaciones por WhatsApp:
+
+- Explica **qué hacemos y cuánto cuesta**, con precios desde USD y su equivalente en CUP según la tasa del día.
+- Demuestra con **proyectos reales que el cliente puede probar** (con credenciales demo) en lugar de promesas.
+- Pone **WhatsApp a un toque** en todas las páginas, con el mensaje ya redactado según lo que el visitante estaba viendo.
+- Carga rápido con **datos móviles lentos** y se puede instalar como app.
+
+## Funcionalidades
+
+|                          |                                                                                                                                                                                                                                                                   |
+| ------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 🏠 **Portada**           | Propuesta de valor, cifras verificables, servicios destacados, casos destacados, por qué Tiza Coderz, proceso, preguntas frecuentes y llamada a la acción.                                                                                                        |
+| 💼 **Servicios**         | 7 paquetes (Presencia, Catálogo/Menú QR, Tienda online, Sistema de gestión, App móvil, Automatización con IA, Mantenimiento) leídos de [`data/services.ts`](data/services.ts), con «desde X USD ≈ Y CUP», plazo, qué incluye y botón de presupuesto por WhatsApp. |
+| 💱 **Multimoneda**       | Precio base en USD; el equivalente en CUP se calcula con la tasa y fecha de [`data/exchange-rate.ts`](data/exchange-rate.ts) (validadas con Zod).                                                                                                                 |
+| 🗂️ **Portafolio**        | Grid filtrable por sector (`?sector=ecommerce` compartible). Cada proyecto es un MDX en [`content/projects/`](content/projects) con frontmatter validado.                                                                                                         |
+| 📄 **Casos de estudio**  | `/proyectos/[slug]`: Problema → Solución → Resultado → Capturas → Stack → Enlaces, con credenciales demo, imagen Open Graph propia y JSON-LD.                                                                                                                     |
+| 🧭 **Proceso**           | 1 Conversación · 2 Propuesta · 3 Diseño · 4 Desarrollo con demos semanales · 5 Entrega y mantenimiento ([`data/process.ts`](data/process.ts)).                                                                                                                    |
+| 🏢 **Nosotros**          | Historia del nombre, misión, valores, equipo (fundador con [CV en PDF](public/cv.pdf)) y colaboradores.                                                                                                                                                           |
+| ✉️ **Contacto**          | WhatsApp, correo, ubicación y formulario accesible: envía por **Formspree** si está configurado; si no, abre **WhatsApp** o el **correo** con el mensaje ya escrito. Estados de envío, éxito y error de red/servidor.                                             |
+| 💬 **Testimonios**       | Array editable en [`data/testimonials.ts`](data/testimonials.ts). La sección se oculta mientras esté vacío (solo testimonios reales).                                                                                                                             |
+| 🌐 **ES / EN**           | Diccionarios tipados (`en.ts` debe tener las mismas claves que `es.ts`; lo comprueban TypeScript y un test). Español por defecto.                                                                                                                                 |
+| 🌙 **Modo oscuro**       | Por preferencia del sistema o manual, sin destello al cargar.                                                                                                                                                                                                     |
+| 🔎 **SEO**               | Metadata por página, canonical y `hreflang`, Open Graph con imagen por página, `sitemap.xml`, `robots.txt`, JSON-LD `ProfessionalService` y `CreativeWork`.                                                                                                       |
+| 📱 **PWA**               | Instalable, con iconos y service worker: las páginas visitadas se pueden leer sin conexión.                                                                                                                                                                       |
+| 🟢 **WhatsApp flotante** | En todas las páginas.                                                                                                                                                                                                                                             |
+
+## Capturas
+
+|                Inicio (escritorio)                 |                     Inicio (móvil)                     |                        Modo oscuro                        |
+| :------------------------------------------------: | :----------------------------------------------------: | :-------------------------------------------------------: |
+| ![Inicio](docs/screenshots/inicio-escritorio.webp) | ![Inicio en móvil](docs/screenshots/inicio-movil.webp) |    ![Modo oscuro](docs/screenshots/inicio-oscuro.webp)    |
+|                   **Servicios**                    |                     **Proyectos**                      |                    **Caso de estudio**                    |
+|   ![Servicios](docs/screenshots/servicios.webp)    |     ![Proyectos](docs/screenshots/proyectos.webp)      | ![Caso de estudio](docs/screenshots/caso-de-estudio.webp) |
+|                **Contacto (móvil)**                |                      **English**                       |                                                           |
+| ![Contacto](docs/screenshots/contacto-movil.webp)  |     ![English](docs/screenshots/home-english.webp)     |                                                           |
+
+Se regeneran con `pnpm build && pnpm shots /es/ /es/servicios/ …` (ver [Scripts](#scripts)).
+
+## Demo y credenciales
+
+- **Web:** <https://tiza-coderz.github.io/>
+- Esta web es pública y no tiene panel de administración: el contenido se edita en `data/` y `content/` y se publica con un commit.
+- Los **proyectos del portafolio** sí tienen demo con login. Las credenciales están en cada caso de estudio:
+
+| Proyecto     | Demo                                                                        | Usuario                      | Contraseña |
+| ------------ | --------------------------------------------------------------------------- | ---------------------------- | ---------- |
+| CajaFácil    | [tiza-coderz.github.io/cajafacil](https://tiza-coderz.github.io/cajafacil/) | PIN `1234` o `admin@demo.cu` | `demo1234` |
+| ComboYa      | [combo-ya.vercel.app](https://combo-ya.vercel.app)                          | `admin@demo.cu`              | `demo1234` |
+| NegocioClaro | [negocioclaro-three.vercel.app](https://negocioclaro-three.vercel.app)      | `admin@demo.cu`              | `demo1234` |
+| TallerTrack  | [tallertrack-five.vercel.app](https://tallertrack-five.vercel.app)          | `admin@demo.cu`              | `demo1234` |
+
+## Stack
+
+| Capa        | Tecnología                                                                                              |
+| ----------- | ------------------------------------------------------------------------------------------------------- |
+| Framework   | **Next.js 16** (App Router, `output: 'export'`: HTML estático, sin servidor)                            |
+| Lenguaje    | **TypeScript** estricto (`strict` + `noUncheckedIndexedAccess`)                                         |
+| Estilos     | **Tailwind CSS 4** con tokens de marca, Inter + Caveat autoalojadas, iconos SVG en línea                |
+| Contenido   | **MDX** (`@mdx-js/mdx` + `remark-gfm`) compilado en el build, frontmatter con **gray-matter** + **Zod** |
+| Formularios | **Formspree** (opcional) · WhatsApp (`wa.me`) · `mailto`                                                |
+| Calidad     | ESLint, Prettier (+ orden de clases Tailwind), **Vitest** (74 tests)                                    |
+| Imágenes    | **sharp** + **Playwright** (capturas, portadas, Open Graph, iconos)                                     |
+| CI/CD       | GitHub Actions: lint → tipos → formato → tests → build; deploy a **GitHub Pages**                       |
+
+Sin librerías de UI, de iconos ni de animación: la portada carga **un solo componente cliente pequeño** (menú móvil, tema e idioma), las animaciones de aparición son CSS (`animation-timeline: view()`) y el FAQ usa `<details>`.
+
+## Arquitectura
+
+```
+content/projects/      Casos de estudio en MDX (slug.mdx = ES, slug.en.mdx = EN)
+data/                  Datos editables: empresa, servicios, tasa, proceso, testimonios
+public/                Imágenes WebP, Open Graph, iconos, cv.pdf, sw.js
+scripts/               Capturas, portadas, iconos y optimización de imágenes
+src/
+├─ app/
+│  ├─ (root)/          «/» → redirige a /es/ o /en/ según el navegador
+│  ├─ [lang]/          Todas las páginas por idioma (layout raíz con <html lang>)
+│  ├─ global-not-found 404 bilingüe
+│  └─ sitemap · robots · manifest · icon
+├─ components/
+│  ├─ ui/              Botones, Section, Card, Badge, iconos (reutilizables)
+│  ├─ layout/          Cabecera, pie, menú móvil, tema, idioma, WhatsApp flotante
+│  └─ sections/        Hero, servicios, proyectos, proceso, FAQ, contacto…
+├─ i18n/               config + diccionarios es.ts / en.ts tipados
+└─ lib/                Lógica pura y testeada
+   ├─ currency.ts        USD→CUP, formato es-CU, validación de la tasa
+   ├─ projects.ts        Carga, validación, orden y filtro de proyectos MDX
+   ├─ contact.ts         Validación del formulario y envíos
+   ├─ whatsapp.ts        Enlaces wa.me con números cubanos
+   ├─ structured-data.ts JSON-LD y sitemap
+   └─ seo.ts · site.ts · mdx.tsx
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+**Capas:** las páginas (`app/`) solo componen; los componentes reciben datos ya preparados; toda regla (conversión de moneda, validación, orden de proyectos, enlaces) vive en `src/lib` como funciones puras con tests. Los datos que cambia el negocio están fuera del código, en `data/` y `content/`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Cómo editar el contenido
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| Quiero…                            | Edite                                                                                                                         |
+| ---------------------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
+| Cambiar la tasa USD→CUP            | [`data/exchange-rate.ts`](data/exchange-rate.ts) (`usdToCup` y `updatedAt`)                                                   |
+| Cambiar precios o paquetes         | [`data/services.ts`](data/services.ts)                                                                                        |
+| Cambiar teléfono, correo u horario | [`data/company.ts`](data/company.ts)                                                                                          |
+| Añadir un proyecto                 | `content/projects/<slug>.mdx` y `<slug>.en.mdx` + imágenes en `public/images/projects/<slug>/`, luego `pnpm marketing <slug>` |
+| Añadir un testimonio real          | [`data/testimonials.ts`](data/testimonials.ts)                                                                                |
+| Cambiar textos de la interfaz      | `src/i18n/dictionaries/es.ts` y `en.ts`                                                                                       |
 
-## Learn More
+Si algo está mal escrito (un sector que no existe, una imagen que falta, una traducción sin una clave), **los tests fallan en el CI** antes de publicar.
 
-To learn more about Next.js, take a look at the following resources:
+## Correrlo en local
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Requisitos: **Node 22+** y **pnpm 10** (`corepack enable`).
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+git clone https://github.com/Tiza-Coderz/tiza-coderz.github.io.git
+cd tiza-coderz.github.io
+pnpm install
+cp .env.example .env.local      # opcional
+pnpm dev                        # http://localhost:3000/es/
+```
 
-## Deploy on Vercel
+### Scripts
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+| Comando                                                | Qué hace                                                                     |
+| ------------------------------------------------------ | ---------------------------------------------------------------------------- |
+| `pnpm dev`                                             | Servidor de desarrollo                                                       |
+| `pnpm build`                                           | Export estático en `out/`                                                    |
+| `pnpm start`                                           | Sirve `out/` en local                                                        |
+| `pnpm check`                                           | Lint + tipos + formato + tests (lo mismo que el CI)                          |
+| `pnpm test` / `pnpm test:coverage`                     | Tests con Vitest                                                             |
+| `pnpm shots /es/ /es/servicios/ [--full]`              | Capturas de revisión (móvil/escritorio, claro/oscuro) en `.screenshots-tmp/` |
+| `pnpm img <entrada> <salida.webp> --mobile\|--desktop` | Normaliza una captura a WebP                                                 |
+| `pnpm capture tallertrack`                             | Captura pantallas de una demo publicada                                      |
+| `pnpm marketing [slug]`                                | Genera portadas 1200×750 e imágenes Open Graph                               |
+| `pnpm icons`                                           | Genera iconos de la PWA y favicon                                            |
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+> Los scripts de imágenes usan el **Edge o Chrome instalado** (`PW_CHANNEL=chrome` para Chrome); no descargan navegadores.
+
+### Variables de entorno
+
+Ver [`.env.example`](.env.example). Todas son públicas (no hay secretos):
+
+| Variable                   | Para qué                                                |
+| -------------------------- | ------------------------------------------------------- |
+| `NEXT_PUBLIC_SITE_URL`     | URL pública (canonical, sitemap, Open Graph)            |
+| `NEXT_PUBLIC_BASE_PATH`    | Solo si se publica en un subdirectorio                  |
+| `NEXT_PUBLIC_FORMSPREE_ID` | ID del formulario de Formspree; vacío = WhatsApp/mailto |
+
+## Desplegar GRATIS
+
+### Opción A · GitHub Pages (la actual)
+
+1. El repo se llama `<organización>.github.io`, así que el sitio queda en la raíz: `https://tiza-coderz.github.io/`.
+2. **Settings → Pages → Source: GitHub Actions**.
+3. (Opcional) **Settings → Secrets and variables → Actions → Variables**: `FORMSPREE_ID`, `SITE_URL` (si usa dominio propio) o `BASE_PATH` (si el repo tiene otro nombre, p. ej. `/tiza-web`).
+4. Cada push a `main` ejecuta [`deploy.yml`](.github/workflows/deploy.yml): tests → build → publicación. Tarda unos 2 minutos.
+5. Dominio propio: añada el dominio en **Settings → Pages → Custom domain**, cree el registro `CNAME` en su DNS y ponga `SITE_URL=https://sudominio.com`.
+
+### Opción B · Vercel (plan Hobby)
+
+1. En [vercel.com/new](https://vercel.com/new) importe el repositorio.
+2. Vercel detecta Next.js y usa [`vercel.json`](vercel.json) (`pnpm build`, salida `out/`, redirección `/` → `/es/`).
+3. En **Environment Variables** añada `NEXT_PUBLIC_SITE_URL=https://<su-proyecto>.vercel.app` y, si quiere, `NEXT_PUBLIC_FORMSPREE_ID`.
+4. Cada push a `main` despliega a producción y cada PR obtiene una URL de vista previa.
+
+### Formulario con Formspree (gratis hasta 50 envíos/mes)
+
+1. Cree una cuenta en [formspree.io](https://formspree.io) con `tizacoders@gmail.com` y un formulario nuevo.
+2. Copie el ID (`https://formspree.io/f/<ID>`) en la variable `FORMSPREE_ID` (GitHub) o `NEXT_PUBLIC_FORMSPREE_ID` (Vercel/local).
+3. Sin ID, el formulario sigue funcionando: abre WhatsApp o el correo del visitante con el mensaje redactado.
+
+## Flujo de trabajo (Git Flow)
+
+`main` = producción · `develop` = integración · `feature/*`, `fix/*`, `docs/*`, `ci/*` → PR a `develop` · `release/vX.Y.Z` → `main` + etiqueta · `hotfix/*` desde `main`. Commits con Conventional Commits. Detalle en [CONTRIBUTING.md](CONTRIBUTING.md) y cambios en [CHANGELOG.md](CHANGELOG.md).
+
+---
+
+## English summary
+
+**Tiza Coderz** is a software studio in Havana, Cuba, that builds custom apps, websites and business systems for Cuban small businesses. This repository is the studio's **corporate website**: a fast, bilingual (Spanish by default, English) static site built with **Next.js 16 (App Router, static export), TypeScript (strict), Tailwind CSS 4 and MDX**.
+
+It presents the studio's service packages with prices in USD and their CUP equivalent at an editable exchange rate, a sector-filterable portfolio of case studies written in MDX (several with live demos and demo credentials), the work process, an about page and a contact form (Formspree, or WhatsApp/mailto fallback). It includes dark mode, subtle CSS-only animations, a floating WhatsApp button, full technical SEO (per-page metadata, Open Graph images, sitemap, robots, `ProfessionalService` JSON-LD) and an installable PWA with offline reading.
+
+Content lives in `data/` and `content/`, validated with Zod; business logic lives in pure, tested functions in `src/lib` (74 Vitest tests). CI runs lint, type checks, formatting, tests and build on every PR; merging to `main` deploys to **GitHub Pages** (Vercel config included). Live site: <https://tiza-coderz.github.io/>.
