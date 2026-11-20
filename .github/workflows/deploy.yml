@@ -45,7 +45,6 @@ jobs:
           # Variables del repositorio (Settings → Secrets and variables → Actions → Variables).
           NEXT_PUBLIC_SITE_URL: ${{ vars.SITE_URL || steps.pages.outputs.origin }}
           NEXT_PUBLIC_BASE_PATH: ${{ vars.BASE_PATH }}
-          NEXT_PUBLIC_FORMSPREE_ID: ${{ vars.FORMSPREE_ID }}
 
       # Sin Jekyll, GitHub Pages sirve tal cual las carpetas que empiezan por "_" (/_next).
       - run: touch out/.nojekyll
