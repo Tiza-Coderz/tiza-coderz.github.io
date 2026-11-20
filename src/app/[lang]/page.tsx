@@ -3,7 +3,7 @@ import { services } from "@data/services";
 import { CtaBand } from "@/components/sections/CtaBand";
 import { Faq, Hero, ProcessSection, Stats, Testimonials, WhyUs } from "@/components/sections/Home";
 import { ProjectCard } from "@/components/sections/ProjectCard";
-import { RateNote, ServicesGrid } from "@/components/sections/Services";
+import { QuoteNote, ServicesGrid } from "@/components/sections/Services";
 import { ButtonLink } from "@/components/ui/Button";
 import { IconArrowRight } from "@/components/ui/Icons";
 import { Section } from "@/components/ui/Layout";
@@ -38,7 +38,7 @@ export default async function HomePage({ params }: PageProps<"/[lang]">) {
       >
         <ServicesGrid services={featuredServices} locale={locale} dict={dict} />
         <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-          <RateNote locale={locale} dict={dict} />
+          <QuoteNote dict={dict} />
           <ButtonLink href={href(locale, "services")} variant="secondary" className="shrink-0">
             {dict.services.seeAll}
             <IconArrowRight className="size-4" />

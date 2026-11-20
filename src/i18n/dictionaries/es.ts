@@ -7,7 +7,7 @@ export const es = {
     siteName: "Tiza Coderz",
     defaultTitle: "Tiza Coderz · Apps, webs y sistemas para mipymes cubanas",
     defaultDescription:
-      "Estudio de desarrollo en La Habana. Tiendas online, sistemas de gestión, apps móviles y automatización con IA para mipymes cubanas. Precios en USD y CUP.",
+      "Estudio de diseño y desarrollo en La Habana. Diseño UX/UI y de marca, tiendas online, sistemas de gestión, apps móviles y automatización con IA para mipymes cubanas.",
   },
   a11y: {
     skipToContent: "Saltar al contenido",
@@ -47,11 +47,11 @@ export const es = {
       titleStart: "Apps y sistemas a la medida para que su mipyme",
       titleHighlight: "venda más",
       subtitle:
-        "Controle su inventario y su caja, deje de perder pedidos y cobre en USD y en CUP. Todo lo que hacemos funciona aunque la conexión sea mala.",
+        "Diseñamos y desarrollamos el software de su negocio: controle su inventario y su caja, deje de perder pedidos y cobre en USD y en CUP. Todo funciona aunque la conexión sea mala.",
       ctaWhatsapp: "Escríbanos por WhatsApp",
       ctaProjects: "Ver proyectos",
       trust: [
-        "Precios en USD y CUP",
+        "Diseño y desarrollo en un solo equipo",
         "Funciona con datos lentos o sin conexión",
         "Demos cada semana",
       ],
@@ -105,7 +105,7 @@ export const es = {
       items: [
         {
           q: "¿Cuánto cuesta una app o una web?",
-          a: "Depende de lo que necesite, pero cada paquete tiene un precio de partida: una web de presencia desde 150 USD, una tienda online desde 500 USD y un sistema de gestión desde 900 USD. En la primera conversación le damos un precio cerrado por escrito.",
+          a: "Cada proyecto es distinto, por eso no publicamos una lista de precios. Después de una primera conversación gratis le enviamos una propuesta con precio cerrado por escrito, sin compromiso.",
         },
         {
           q: "¿Puedo pagar en CUP?",
@@ -117,7 +117,11 @@ export const es = {
         },
         {
           q: "¿Cuánto tiempo tarda?",
-          a: "Una web de presencia, de 3 a 7 días. Una tienda online, de 2 a 4 semanas. Un sistema de gestión, de 3 a 8 semanas. Cada semana le mostramos el avance.",
+          a: "Depende del alcance de su proyecto. En la propuesta le damos un plazo por escrito y, durante el desarrollo, cada semana le mostramos el avance.",
+        },
+        {
+          q: "¿También hacen diseño?",
+          a: "Sí. Diseñamos interfaces de apps y webs (UX/UI), prototipos navegables e identidad visual: logo, colores, tipografía y piezas para redes. Puede contratar solo el diseño o el proyecto completo.",
         },
         {
           q: "¿Qué pasa después de la entrega?",
@@ -132,14 +136,9 @@ export const es = {
   },
   services: {
     eyebrow: "Lo que hacemos",
-    title: "Paquetes con precio claro, sin sorpresas",
+    title: "Diseño y desarrollo a la medida de su negocio",
     intro:
-      "Usted no compra horas de programación: compra un resultado para su negocio. Cada paquete tiene un precio de partida y un plazo; lo ajustamos a su caso en la primera conversación, sin costo.",
-    from: "Desde",
-    upTo: "hasta {price}",
-    perMonth: "al mes",
-    approxCup: "≈ {amount}",
-    timeline: "Plazo",
+      "Usted no compra horas de programación: compra un resultado para su negocio. Desde el diseño de su marca y sus pantallas hasta el sistema funcionando. Cada proyecto se cotiza a la medida en la primera conversación, sin costo.",
     includes: "Incluye",
     idealFor: "Ideal para",
     quote: "Pedir presupuesto",
@@ -147,11 +146,11 @@ export const es = {
     seeAll: "Ver todos los servicios",
     quoteMessage:
       "Hola, Tiza Coderz. Me interesa el paquete «{service}». ¿Me pueden dar más información para mi negocio?",
-    rateNote:
-      "Precios en USD. El equivalente en CUP es orientativo: {rate} CUP por USD, tasa del {date}.",
-    pageTitle: "Servicios y precios",
+    quoteNote:
+      "No trabajamos con tarifas fijas: cuéntenos su caso y le enviamos una propuesta con precio y plazo por escrito, sin costo ni compromiso.",
+    pageTitle: "Servicios",
     pageDescription:
-      "Webs, catálogos y menús QR, tiendas online, sistemas de gestión, apps móviles y automatización con IA para mipymes cubanas. Precios desde 150 USD.",
+      "Diseño UX/UI y de marca, webs, catálogos y menús QR, tiendas online, sistemas de gestión, apps móviles y automatización con IA para mipymes cubanas.",
     custom: {
       title: "¿Su idea no encaja en ningún paquete?",
       text: "También hacemos proyectos a la medida: integraciones, sistemas internos, migraciones de Excel a una app y lo que su negocio necesite. Cuéntenos el problema y le proponemos una solución.",
@@ -332,6 +331,7 @@ export const es = {
       business: "Nombre del negocio (opcional)",
       projectType: "¿Qué necesita?",
       projectTypes: {
+        diseno: "Diseño (logo, marca, pantallas)",
         presencia: "Una web para mi negocio",
         "catalogo-menu-qr": "Catálogo o menú QR",
         "tienda-online": "Tienda online",
@@ -377,7 +377,7 @@ export const es = {
     email: "Enviar un correo",
   },
   footer: {
-    tagline: "Apps, webs y sistemas a la medida para mipymes cubanas.",
+    tagline: "Diseño, apps, webs y sistemas a la medida para mipymes cubanas.",
     explore: "Explorar",
     contact: "Contacto",
     hours: "Horario",

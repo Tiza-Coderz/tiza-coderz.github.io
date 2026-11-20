@@ -13,8 +13,8 @@ export const company = {
     en: "From a chalk sketch to software that sells.",
   } satisfies Localized,
   shortDescription: {
-    es: "Estudio de desarrollo en La Habana. Hacemos apps, webs y sistemas a la medida para mipymes cubanas.",
-    en: "Software studio in Havana. We build custom apps, websites and business systems for Cuban small businesses.",
+    es: "Estudio de diseño y desarrollo en La Habana. Hacemos diseño, apps, webs y sistemas a la medida para mipymes cubanas.",
+    en: "Design and software studio in Havana. We create custom design, apps, websites and business systems for Cuban small businesses.",
   } satisfies Localized,
   whatsapp: "+53 53475180",
   email: "tizacoders@gmail.com",

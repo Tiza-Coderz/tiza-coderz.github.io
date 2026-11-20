@@ -37,7 +37,6 @@ export function professionalServiceJsonLd(locale: Locale, dict: Dictionary) {
     areaServed: company.areaServed.map((name) => ({ "@type": "Place", name })),
     availableLanguage: ["es", "en"],
     currenciesAccepted: "USD, CUP",
-    priceRange: "$$",
     openingHoursSpecification: {
       "@type": "OpeningHoursSpecification",
       dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
@@ -51,13 +50,6 @@ export function professionalServiceJsonLd(locale: Locale, dict: Dictionary) {
       itemListElement: services.map((s) => ({
         "@type": "Offer",
         itemOffered: { "@type": "Service", name: s.name[locale], description: s.summary[locale] },
-        priceSpecification: {
-          "@type": s.billing === "monthly" ? "UnitPriceSpecification" : "PriceSpecification",
-          minPrice: s.priceFromUsd,
-          ...(s.priceToUsd ? { maxPrice: s.priceToUsd } : {}),
-          priceCurrency: "USD",
-          ...(s.billing === "monthly" ? { unitCode: "MON" } : {}),
-        },
       })),
     },
   };

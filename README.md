@@ -25,29 +25,28 @@ Un dueño de mipyme en Cuba que busca quien le haga una app o un sistema no comp
 
 Esta web es la **oficina en línea del estudio Tiza Coderz**. Su trabajo es convertir visitas en conversaciones por WhatsApp:
 
-- Explica **qué hacemos y cuánto cuesta**, con precios desde USD y su equivalente en CUP según la tasa del día.
+- Explica **qué hacemos**, del diseño de marca y pantallas al sistema funcionando, y cómo trabajamos. No publica precios ni plazos: cada proyecto se cotiza a la medida.
 - Demuestra con **proyectos reales que el cliente puede probar** (con credenciales demo) en lugar de promesas.
 - Pone **WhatsApp a un toque** en todas las páginas, con el mensaje ya redactado según lo que el visitante estaba viendo.
 - Carga rápido con **datos móviles lentos** y se puede instalar como app.
 
 ## Funcionalidades
 
-|                          |                                                                                                                                                                                                                                                                   |
-| ------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 🏠 **Portada**           | Propuesta de valor, cifras verificables, servicios destacados, casos destacados, por qué Tiza Coderz, proceso, preguntas frecuentes y llamada a la acción.                                                                                                        |
-| 💼 **Servicios**         | 7 paquetes (Presencia, Catálogo/Menú QR, Tienda online, Sistema de gestión, App móvil, Automatización con IA, Mantenimiento) leídos de [`data/services.ts`](data/services.ts), con «desde X USD ≈ Y CUP», plazo, qué incluye y botón de presupuesto por WhatsApp. |
-| 💱 **Multimoneda**       | Precio base en USD; el equivalente en CUP se calcula con la tasa y fecha de [`data/exchange-rate.ts`](data/exchange-rate.ts) (validadas con Zod).                                                                                                                 |
-| 🗂️ **Portafolio**        | Grid filtrable por sector (`?sector=ecommerce` compartible). Cada proyecto es un MDX en [`content/projects/`](content/projects) con frontmatter validado.                                                                                                         |
-| 📄 **Casos de estudio**  | `/proyectos/[slug]`: Problema → Solución → Resultado → Capturas → Stack → Enlaces, con credenciales demo, imagen Open Graph propia y JSON-LD.                                                                                                                     |
-| 🧭 **Proceso**           | 1 Conversación · 2 Propuesta · 3 Diseño · 4 Desarrollo con demos semanales · 5 Entrega y mantenimiento ([`data/process.ts`](data/process.ts)).                                                                                                                    |
-| 🏢 **Nosotros**          | Historia del nombre, misión, valores, equipo (fundador con [CV en PDF](public/cv.pdf)) y colaboradores.                                                                                                                                                           |
-| ✉️ **Contacto**          | WhatsApp, correo, ubicación y formulario accesible: envía por **Formspree** si está configurado; si no, abre **WhatsApp** o el **correo** con el mensaje ya escrito. Estados de envío, éxito y error de red/servidor.                                             |
-| 💬 **Testimonios**       | Array editable en [`data/testimonials.ts`](data/testimonials.ts). La sección se oculta mientras esté vacío (solo testimonios reales).                                                                                                                             |
-| 🌐 **ES / EN**           | Diccionarios tipados (`en.ts` debe tener las mismas claves que `es.ts`; lo comprueban TypeScript y un test). Español por defecto.                                                                                                                                 |
-| 🌙 **Modo oscuro**       | Por preferencia del sistema o manual, sin destello al cargar.                                                                                                                                                                                                     |
-| 🔎 **SEO**               | Metadata por página, canonical y `hreflang`, Open Graph con imagen por página, `sitemap.xml`, `robots.txt`, JSON-LD `ProfessionalService` y `CreativeWork`.                                                                                                       |
-| 📱 **PWA**               | Instalable, con iconos y service worker: las páginas visitadas se pueden leer sin conexión.                                                                                                                                                                       |
-| 🟢 **WhatsApp flotante** | En todas las páginas.                                                                                                                                                                                                                                             |
+|                          |                                                                                                                                                                                                                                                                                                                |
+| ------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 🏠 **Portada**           | Propuesta de valor, cifras verificables, servicios destacados, casos destacados, por qué Tiza Coderz, proceso, preguntas frecuentes y llamada a la acción.                                                                                                                                                     |
+| 💼 **Servicios**         | 8 servicios (Diseño UX/UI y de marca, Presencia, Catálogo/Menú QR, Tienda online, Sistema de gestión, App móvil, Automatización con IA, Mantenimiento) leídos de [`data/services.ts`](data/services.ts), con qué incluye, para quién es y botón de presupuesto por WhatsApp. Sin precios ni plazos publicados. |
+| 🗂️ **Portafolio**        | Grid filtrable por sector (`?sector=ecommerce` compartible). Cada proyecto es un MDX en [`content/projects/`](content/projects) con frontmatter validado.                                                                                                                                                      |
+| 📄 **Casos de estudio**  | `/proyectos/[slug]`: Problema → Solución → Resultado → Capturas → Stack → Enlaces, con credenciales demo, imagen Open Graph propia y JSON-LD.                                                                                                                                                                  |
+| 🧭 **Proceso**           | 1 Conversación · 2 Propuesta · 3 Diseño · 4 Desarrollo con demos semanales · 5 Entrega y mantenimiento ([`data/process.ts`](data/process.ts)).                                                                                                                                                                 |
+| 🏢 **Nosotros**          | Historia del nombre, misión, valores, equipo (fundador con [CV en PDF](public/cv.pdf)) y colaboradores.                                                                                                                                                                                                        |
+| ✉️ **Contacto**          | WhatsApp, correo, ubicación y formulario accesible: envía por **Formspree** si está configurado; si no, abre **WhatsApp** o el **correo** con el mensaje ya escrito. Estados de envío, éxito y error de red/servidor.                                                                                          |
+| 💬 **Testimonios**       | Array editable en [`data/testimonials.ts`](data/testimonials.ts). La sección se oculta mientras esté vacío (solo testimonios reales).                                                                                                                                                                          |
+| 🌐 **ES / EN**           | Diccionarios tipados (`en.ts` debe tener las mismas claves que `es.ts`; lo comprueban TypeScript y un test). Español por defecto.                                                                                                                                                                              |
+| 🌙 **Modo oscuro**       | Por preferencia del sistema o manual, sin destello al cargar.                                                                                                                                                                                                                                                  |
+| 🔎 **SEO**               | Metadata por página, canonical y `hreflang`, Open Graph con imagen por página, `sitemap.xml`, `robots.txt`, JSON-LD `ProfessionalService` y `CreativeWork`.                                                                                                                                                    |
+| 📱 **PWA**               | Instalable, con iconos y service worker: las páginas visitadas se pueden leer sin conexión.                                                                                                                                                                                                                    |
+| 🟢 **WhatsApp flotante** | En todas las páginas.                                                                                                                                                                                                                                                                                          |
 
 ## Capturas
 
@@ -83,7 +82,7 @@ Se regeneran con `pnpm build && pnpm shots /es/ /es/servicios/ …` (ver [Script
 | Estilos     | **Tailwind CSS 4** con tokens de marca, Inter + Caveat autoalojadas, iconos SVG en línea                |
 | Contenido   | **MDX** (`@mdx-js/mdx` + `remark-gfm`) compilado en el build, frontmatter con **gray-matter** + **Zod** |
 | Formularios | **Formspree** (opcional) · WhatsApp (`wa.me`) · `mailto`                                                |
-| Calidad     | ESLint, Prettier (+ orden de clases Tailwind), **Vitest** (74 tests)                                    |
+| Calidad     | ESLint, Prettier (+ orden de clases Tailwind), **Vitest** (69 tests)                                    |
 | Imágenes    | **sharp** + **Playwright** (capturas, portadas, Open Graph, iconos)                                     |
 | CI/CD       | GitHub Actions: lint → tipos → formato → tests → build; deploy a **GitHub Pages**                       |
 
@@ -93,7 +92,7 @@ Sin librerías de UI, de iconos ni de animación: la portada carga **un solo com
 
 ```
 content/projects/      Casos de estudio en MDX (slug.mdx = ES, slug.en.mdx = EN)
-data/                  Datos editables: empresa, servicios, tasa, proceso, testimonios
+data/                  Datos editables: empresa, servicios, proceso, testimonios
 public/                Imágenes WebP, Open Graph, iconos, cv.pdf, sw.js
 scripts/               Capturas, portadas, iconos y optimización de imágenes
 src/
@@ -108,7 +107,6 @@ src/
 │  └─ sections/        Hero, servicios, proyectos, proceso, FAQ, contacto…
 ├─ i18n/               config + diccionarios es.ts / en.ts tipados
 └─ lib/                Lógica pura y testeada
-   ├─ currency.ts        USD→CUP, formato es-CU, validación de la tasa
    ├─ projects.ts        Carga, validación, orden y filtro de proyectos MDX
    ├─ contact.ts         Validación del formulario y envíos
    ├─ whatsapp.ts        Enlaces wa.me con números cubanos
@@ -122,8 +120,7 @@ src/
 
 | Quiero…                            | Edite                                                                                                                         |
 | ---------------------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
-| Cambiar la tasa USD→CUP            | [`data/exchange-rate.ts`](data/exchange-rate.ts) (`usdToCup` y `updatedAt`)                                                   |
-| Cambiar precios o paquetes         | [`data/services.ts`](data/services.ts)                                                                                        |
+| Cambiar o añadir servicios         | [`data/services.ts`](data/services.ts)                                                                                        |
 | Cambiar teléfono, correo u horario | [`data/company.ts`](data/company.ts)                                                                                          |
 | Añadir un proyecto                 | `content/projects/<slug>.mdx` y `<slug>.en.mdx` + imágenes en `public/images/projects/<slug>/`, luego `pnpm marketing <slug>` |
 | Añadir un testimonio real          | [`data/testimonials.ts`](data/testimonials.ts)                                                                                |
@@ -230,6 +227,6 @@ pnpm dlx vercel --prod         # despliegue a producción
 
 **Tiza Coderz** is a software studio in Havana, Cuba, that builds custom apps, websites and business systems for Cuban small businesses. This repository is the studio's **corporate website**: a fast, bilingual (Spanish by default, English) static site built with **Next.js 16 (App Router, static export), TypeScript (strict), Tailwind CSS 4 and MDX**.
 
-It presents the studio's service packages with prices in USD and their CUP equivalent at an editable exchange rate, a sector-filterable portfolio of case studies written in MDX (several with live demos and demo credentials), the work process, an about page and a contact form (Formspree, or WhatsApp/mailto fallback). It includes dark mode, subtle CSS-only animations, a floating WhatsApp button, full technical SEO (per-page metadata, Open Graph images, sitemap, robots, `ProfessionalService` JSON-LD) and an installable PWA with offline reading.
+It presents the studio's services (including UX/UI and brand design; no public prices or timelines, every project is quoted individually), a sector-filterable portfolio of case studies written in MDX (several with live demos and demo credentials), the work process, an about page and a contact form (Formspree, or WhatsApp/mailto fallback). It includes dark mode, subtle CSS-only animations, a floating WhatsApp button, full technical SEO (per-page metadata, Open Graph images, sitemap, robots, `ProfessionalService` JSON-LD) and an installable PWA with offline reading.
 
-Content lives in `data/` and `content/`, validated with Zod; business logic lives in pure, tested functions in `src/lib` (74 Vitest tests). CI runs lint, type checks, formatting, tests and build on every PR; merging to `main` deploys to **GitHub Pages** (Vercel config included). Live site: <https://tiza-coderz.github.io/>.
+Content lives in `data/` and `content/`, validated with Zod; business logic lives in pure, tested functions in `src/lib` (69 Vitest tests). CI runs lint, type checks, formatting, tests and build on every PR; merging to `main` deploys to **GitHub Pages** (Vercel config included). Live site: <https://tiza-coderz.github.io/>.

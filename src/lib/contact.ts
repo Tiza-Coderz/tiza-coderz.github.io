@@ -8,6 +8,7 @@ import { z } from "zod";
  *   3. mailto: abre el correo del visitante (respaldo sin servicios externos).
  */
 export const projectTypes = [
+  "diseno",
   "presencia",
   "catalogo-menu-qr",
   "tienda-online",
